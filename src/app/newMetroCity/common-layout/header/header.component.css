@@ -1,0 +1,84 @@
+/* .headercolor{
+    background-color: rgb(209, 209, 214);
+    height: 50px;
+
+} */
+
+
+.logo {
+    text-decoration: none;
+    color: rgb(255, 49, 49);
+    font-weight: bolder;
+    font-size: 20px;
+  
+}
+
+.searchDiv {
+    border: 1px solid rgb(202, 202, 202);
+    border-radius: 6px;
+}
+
+#searchbar{
+    border: none;
+   outline: none;
+    width: 230px;
+    height: 30px;
+    border-radius: 6px;
+}
+
+
+
+
+#searchbtn{
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    height: 30px;  
+    border-radius: 6px; 
+}
+
+#searchbtn:hover {
+    color: blue;
+}
+
+.orderTaker {
+    border: 1px solid rgb(202, 202, 202);
+    border-radius: 6px;
+    height: 32px;
+    margin-right: 10px;
+}
+
+.profileDD{
+    list-style: none;
+}
+
+.bellIcon {
+    font-size: 16px;
+}
+
+.profileName{
+    font-size: 16px;
+}
+
+@media only screen and (max-width: 992px) {
+    .orderTaker {
+        border: 1px solid rgb(202, 202, 202);
+        border-radius: 6px;
+        height: 32px;
+        width: 150px;
+        margin-right: 10px; 
+        margin-bottom: 10px;
+    }
+
+    #leftListOnCollapse{
+        display: flex;
+       
+        align-items: center;
+    }
+
+    #rightListOnCollapse{
+        display: flex;
+       
+        align-items: center;
+    }
+} 

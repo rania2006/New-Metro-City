@@ -1,0 +1,281 @@
+<div class="body">
+  <p style="color: rgb(156, 28, 92); font-size: 25px; font-weight: 600">
+    Approval
+  </p>
+  <!-- Table container for Approval Requests -->
+  <div class="tableContainer">
+    <table class="table table-striped text-center">
+      <thead>
+        <tr class="tableHeadings">
+          <th scope="col">#</th>
+          <th scope="col">VEHICLE #</th>
+          <th scope="col">VEHICLE NAME</th>
+          <th scope="col">DRIVER NAME</th>
+          <th scope="col">DEPARTMENT</th>
+          <th scope="col">ACTION</th>
+        </tr>
+      </thead>
+      <tbody class="">
+        <tr>
+          <th scope="row">1</th>
+          <td>ABC-100P</td>
+          <td>Toyota</td>
+          <td>John</td>
+          <td>Electric</td>
+          <td>
+            <a
+            [routerLink]="['/fuel',{
+                outlets:{'metroCity':['approval-details']}
+              }]"
+            >
+              <button class="viewbtn text-white">View</button>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">1</th>
+          <td>ABC-100P</td>
+          <td>Toyota</td>
+          <td>John</td>
+          <td>Electric</td>
+          <td>
+            <button
+              class="viewbtn"
+              data-bs-toggle="modal"
+              data-bs-target="#ViewDetailModal"
+            >
+              View
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">1</th>
+          <td>ABC-100P</td>
+          <td>Toyota</td>
+          <td>John</td>
+          <td>Electric</td>
+          <td>
+            <button
+              class="viewbtn"
+              data-bs-toggle="modal"
+              data-bs-target="#ViewDetailModal"
+            >
+              View
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">1</th>
+          <td>ABC-100P</td>
+          <td>Toyota</td>
+          <td>John</td>
+          <td>Electric</td>
+          <td>
+            <button
+              class="viewbtn"
+              data-bs-toggle="modal"
+              data-bs-target="#ViewDetailModal"
+            >
+              View
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- View Detail Modal -->
+  <div
+    class="modal fade"
+    id="ViewDetailModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5
+            class="modal-title fw-bold"
+            id="exampleModalLabel"
+            style="color: rgb(156, 28, 92)"
+          >
+            Request Details
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+              <!-- Search -->
+              <div class="searchContainer">
+                <div class="searchDiv text-center">
+                  <input
+                    type="search"
+                    placeholder="Enter registration number"
+                    id="searchbar"
+                  />
+                  <button type="submit" id="searchbtn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- Details -->
+              <div class="details">
+                <div class="borderDiv">
+                  <div class="Box">
+                    <div class="VehicleDetails">Vehicle Number:</div>
+                    <hr class="hrline" />
+                    <div class="VehicleDetails">Department:</div>
+                    <hr class="hrline" />
+                    <div class="VehicleDetails">Driver:</div>
+                    <hr class="hrline" />
+                    <div class="VehicleDetails">Fuel Type:</div>
+                    <hr class="hrline" />
+                    <div class="VehicleDetails">Monthly Allowed Fuel:</div>
+                    <hr class="hrline" />
+                    <div class="VehicleDetails">Current Month Consumption:</div>
+                    <hr class="hrline" />
+                    <div class="VehicleDetails">Remaining:</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Buttons -->
+              <!-- <div class="row m-2 ">
+                    <div class=" col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 justify-self-center">
+                      <button class="buttons text-center">Send</button>
+                    </div>
+                    <div  class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 justify-self-center">
+                      <button class="buttons text-center">Edit</button>
+                    </div>
+                    <div  class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 justify-self-center">
+                      <button class="buttons text-center">Cancel</button>
+                    </div>
+                  </div> -->
+            </div>
+            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+              <div class="detailsContainer">
+                <div class="outerDiv">
+                  <div class="childDiv">Details</div>
+                  <div class="VehicleDetailsBox">
+                    <div class="my-4 d-flex">
+                      <div class="headingDiv w-50 text-center">
+                        Vehicle Number:
+                      </div>
+                      <div class="valueDiv w-75 text-center">ABC-4</div>
+                    </div>
+
+                    <div class="my-4 d-flex">
+                      <div class="headingDiv w-50 text-center">
+                        Driver Name:
+                      </div>
+                      <div class="valueDiv w-75 text-center">Micheal John</div>
+                    </div>
+
+                    <div class="my-4 d-flex">
+                      <div class="headingDiv w-50 text-center">Department:</div>
+                      <div class="valueDiv w-75 text-center">Electric</div>
+                    </div>
+
+                    <div class="my-4 d-flex">
+                      <div class="headingDiv w-50 text-center">fuel Type:</div>
+                      <div class="valueDiv w-75 text-center">Diesel</div>
+                    </div>
+
+                    <div class="my-4 d-flex">
+                      <div class="headingDiv w-50 text-center">Demand:</div>
+                      <div class="valueDiv w-75 text-center">20L</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer d-flex justify-content-center">
+          <button
+            type="button"
+            class="btn text-white w-25"
+            style="background-color: rgb(156, 28, 92)"
+            data-bs-toggle="modal"
+            data-bs-target="#EditDemandModal"
+          >
+            Edit
+          </button>
+          <button
+            type="button"
+            class="btn text-white w-25"
+            style="background-color: rgb(156, 28, 92)"
+          >
+            Send
+          </button>
+          <button
+            type="button"
+            class="btn text-white w-25"
+            data-bs-dismiss="modal"
+            style="background-color: rgb(156, 28, 92)"
+          >
+            Reject
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit demand modal -->
+  <div
+    class="modal fade"
+    id="EditDemandModal"
+    data-bs-backdrop="static"
+    data-bs-keyboard="false"
+    tabindex="-1"
+    aria-labelledby="staticBackdropLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5
+            class="modal-title fw-bold"
+            id="staticBackdropLabel"
+            style="color: rgb(156, 28, 92)"
+          >
+            Allowed Quantity
+          </h5>
+        </div>
+        <div class="modal-body">
+          <!-- Demand -->
+          <div class="my-4 d-flex justify-content-center">
+            <div class="modelHeadingDiv text-start mx-2">Demand</div>
+            <div class="modalValueDiv text-center mx-2">
+              <input type="number" class="w-100 inputs" />
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer d-flex justify-content-center">
+          <button
+            type="button"
+            class="btn text-white w-25"
+            style="background-color: rgb(156, 28, 92)"
+          >
+            Update
+          </button>
+          <button
+            type="button"
+            class="btn text-white w-25"
+            data-bs-dismiss="modal"
+            style="background-color: rgb(156, 28, 92)"
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,134 @@
+<nav class="navbar navbar-expand-lg bg-white text-center shadow">
+    <div class="container-fluid">
+      <a class="navbar-brand logo" routerLink="/dashboard">Plusone POS</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        (click)="navbarCollapsed = !navbarCollapsed"
+        [attr.aria-expanded]="!navbarCollapsed"
+        aria-controls="navbarContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div
+        class="collapse navbar-collapse onCollapse"
+        [ngbCollapse]="navbarCollapsed"
+        id="navbarSupportedContent"
+      >
+        <ul
+        id="leftListOnCollapse"
+          class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center align-item-center "
+        >
+          <li ngbDropdown class="nav-item dropdown">
+            <div class="orderTaker">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="true"
+              ngbDropdownToggle
+            >
+              Order Taker
+            </a>
+            <ul class="dropdown-menu" ngbDropdownMenu>
+              <li><a class="dropdown-item" href="#" ngbDropdownItem>John</a></li>
+              <li><a class="dropdown-item" href="#" ngbDropdownItem>chris</a></li>
+              <li><a class="dropdown-item" href="#" ngbDropdownItem>kim</a></li>
+            </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <div class="searchDiv text-center">
+              <input type="search" placeholder="Search" id="searchbar" />
+              <button type="submit" id="searchbtn">
+                <i class="fa fa-magnifying-glass"></i>
+              </button>
+            </div>
+          </li>
+        </ul>
+        <ul id="rightListOnCollapse" class="navbar-nav navbar-right">
+          <li ngbDropdown class="nav-item dropdown">
+            <a
+              ngbDropdownToggle
+              class="nav-link"
+              href="#"
+              data-bs-toggle="dropdown"
+            >
+              <i class="bellIcon fa fa-bell"></i>
+            </a>
+          </li>
+          <li ngbDropdown class="nav-item dropdown align-items-center pe-3">
+            <a
+              class="nav-link nav-profileName"
+              href="#"
+              data-bs-toggle="dropdown"
+              ngbDropdownToggle
+            >
+              ranya@gmail.com
+            </a>
+            <ul ngbDropdownMenu class="dropdown-menu profile">
+              <li class="dropdown-header">
+                <h6>Ranya</h6>
+                <span>Web Designer</span>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li>
+                <a
+                  ngbDropdownItem
+                  class="dropdown-item d-flex align-items-center"
+                  routerLink="/user-profile"
+                >
+                  <i class="fa fa-person me-3"></i> <span>My Profile</span>
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li>
+                <a
+                  ngbDropdownItem
+                  class="dropdown-item d-flex align-items-center"
+                  routerLink="/user-profile"
+                >
+                  <i class="fa fa-gear me-2"></i> <span>Account Settings</span>
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li>
+                <a
+                  ngbDropdownItem
+                  class="dropdown-item d-flex align-items-center"
+                  routerLink="/pages-faq"
+                >
+                  <i class="fa fa-question-circle me-2"></i>
+                  <span>Need Help?</span>
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li>
+                <a
+                  ngbDropdownItem
+                  class="dropdown-item d-flex align-items-center"
+                  routerLink="/login"
+                  (click)="logout()"
+                >
+                  <i class="fa fa-arrow-right-from-bracket me-2"></i>
+                  <span>Sign Out</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+

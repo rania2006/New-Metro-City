@@ -1,0 +1,11 @@
+.body{
+    min-width: 100vw;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(156,28,92);
+}
+
+.mainContainer{
+    padding: 10px;
+}
