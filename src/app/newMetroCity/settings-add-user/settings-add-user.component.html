@@ -1,0 +1,321 @@
+<div class="body">
+  <div class="backpress">
+    <div class="backpressbtn">
+       <a [routerLink]="['/fuel',{
+        outlets:{'metroCity':['settings']}
+      }]">
+        <i class="fa-solid fa-circle-arrow-left"></i>
+       </a> 
+    </div>
+</div>
+  <div class="outerContainer">
+    <div class="d-flex justify-content-end newPurchaseBtndiv">
+      <button
+        class="addUserBtn"
+        data-bs-toggle="modal"
+        data-bs-target="#addUserModal"
+      >
+        Add User
+      </button>
+    </div>
+    <div class="tableContainer">
+      <table class="table table-striped text-center">
+        <thead>
+          <tr class="tableHeadings">
+            <th scope="col-4">USER NAME</th>
+            <th scope="col-4">ROLE</th>
+            <th scope="col-2">ACTION</th>
+            <th scope="col-2">PASSWORD</th>
+          </tr>
+        </thead>
+        <tbody class="">
+          <tr>
+            <th>admin</th>
+            <td>Manager</td>
+            <td>
+              <div>
+                <button class="mx-2 editbuttons" data-bs-toggle="modal"
+                data-bs-target="#editUserModal">Edit</button>
+                <button class="mx-2 editbuttons" (click)="logout()">Logout</button>
+              </div>
+            </td>
+            <td>
+              <div>
+                <button class="mx-2 editbuttons" data-bs-toggle="modal"
+                data-bs-target="#changePasswordModal">Change</button>
+                <button class="mx-2 editbuttons" data-bs-toggle="modal"
+                data-bs-target="#resetPasswordModal">Reset</button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Add User Modal -->
+  <div
+    class="modal fade"
+    id="addUserModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5
+            class="modal-title fw-bold"
+            id="exampleModalLabel"
+            style="color: rgb(156, 28, 92)"
+          >
+            ADD USERS
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <div class="addUserContainer">
+            <!-- Role -->
+            <div class="my-4 d-flex justify-content-center">
+              <div class="modelHeadingDiv text-start mx-2">Role</div>
+              <div class="modalValueDiv text-center mx-2">
+                <input type="text" class="w-100 inputs" />
+              </div>
+            </div>
+            <!-- First Name -->
+            <div class="my-4 d-flex justify-content-center">
+              <div class="modelHeadingDiv text-start mx-2">First Name</div>
+              <div class="modalValueDiv text-center mx-2">
+                <input type="text" class="w-100 inputs" />
+              </div>
+            </div>
+            <!-- Second Name -->
+            <div class="my-4 d-flex justify-content-center">
+              <div class="modelHeadingDiv text-start mx-2">Second Name</div>
+              <div class="modalValueDiv text-center mx-2">
+                <input type="text" class="w-100 inputs" />
+              </div>
+            </div>
+            <!-- User Name -->
+            <div class="my-4 d-flex justify-content-center">
+              <div class="modelHeadingDiv text-start mx-2">User Name</div>
+              <div class="modalValueDiv text-center mx-2">
+                <input type="text" class="w-100 inputs" />
+              </div>
+            </div>
+
+            <!-- Password -->
+            <div class="my-4 d-flex justify-content-center">
+              <div class="modelHeadingDiv text-start mx-2">Password</div>
+              <div class="modalValueDiv text-center mx-2">
+                <input type="text" class="w-100 inputs" />
+              </div>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="my-4 d-flex justify-content-center">
+              <div class="modelHeadingDiv text-start mx-2">Confirm Password</div>
+              <div class="modalValueDiv text-center mx-2">
+                <input type="text" class="w-100 inputs" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer d-flex justify-content-center">
+          <button
+            type="button"
+            class="btn text-white w-25"
+            style="background-color: rgb(156, 28, 92)"
+          >
+            Add
+          </button>
+          <button
+            type="button"
+            class="btn text-white w-25"
+            data-bs-dismiss="modal"
+            style="background-color: rgb(156, 28, 92)"
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Edit User Modal -->
+<div
+class="modal fade"
+id="editUserModal"
+tabindex="-1"
+aria-labelledby="exampleModalLabel"
+aria-hidden="true"
+>
+<div class="modal-dialog modal-dialog-centered">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5
+        class="modal-title fw-bold"
+        id="exampleModalLabel"
+        style="color: rgb(156, 28, 92)"
+      >
+        EDIT USERS
+      </h5>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="modal"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div class="modal-body">
+      <div class="addUserContainer">
+        <!-- Role -->
+        <div class="my-4 d-flex justify-content-center">
+          <div class="modelHeadingDiv text-start mx-2">Role</div>
+          <div class="modalValueDiv text-center mx-2">
+            <input type="text" class="w-100 inputs" />
+          </div>
+        </div>
+        <!-- First Name -->
+        <div class="my-4 d-flex justify-content-center">
+          <div class="modelHeadingDiv text-start mx-2">First Name</div>
+          <div class="modalValueDiv text-center mx-2">
+            <input type="text" class="w-100 inputs" />
+          </div>
+        </div>
+        <!-- Second Name -->
+        <div class="my-4 d-flex justify-content-center">
+          <div class="modelHeadingDiv text-start mx-2">Second Name</div>
+          <div class="modalValueDiv text-center mx-2">
+            <input type="text" class="w-100 inputs" />
+          </div>
+        </div>
+        <!-- User Name -->
+        <div class="my-4 d-flex justify-content-center">
+          <div class="modelHeadingDiv text-start mx-2">User Name</div>
+          <div class="modalValueDiv text-center mx-2">
+            <input type="text" class="w-100 inputs" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer d-flex justify-content-center">
+      <button
+        type="button"
+        class="btn text-white w-25"
+        style="background-color: rgb(156, 28, 92)"
+      >
+        Save
+      </button>
+      <button
+        type="button"
+        class="btn text-white w-25"
+        data-bs-dismiss="modal"
+        style="background-color: rgb(156, 28, 92)"
+      >
+        Cancel
+      </button>
+    </div>
+  </div>
+</div>
+</div>
+
+ <!-- Change password Modal -->
+ <div
+ class="modal fade"
+ id="changePasswordModal"
+ tabindex="-1"
+ aria-labelledby="exampleModalLabel"
+ aria-hidden="true"
+>
+ <div class="modal-dialog modal-dialog-centered">
+   <div class="modal-content">
+     <div class="modal-header">
+       <h5
+         class="modal-title fw-bold"
+         id="exampleModalLabel"
+         style="color: rgb(156, 28, 92)"
+       >
+         CHANGE PASSWORD
+       </h5>
+       <button
+         type="button"
+         class="btn-close"
+         data-bs-dismiss="modal"
+         aria-label="Close"
+       ></button>
+     </div>
+     <div class="modal-body">
+       <div class="addUserContainer">
+         <!-- Old Password -->
+         <div class="my-4 d-flex justify-content-center">
+           <div class="modelHeadingDiv text-start mx-2">Old Password</div>
+           <div class="modalValueDiv text-center mx-2">
+             <input type="text" class="w-100 inputs" />
+           </div>
+         </div>
+
+         <!-- Password -->
+         <div class="my-4 d-flex justify-content-center">
+           <div class="modelHeadingDiv text-start mx-2">Password</div>
+           <div class="modalValueDiv text-center mx-2">
+             <input type="text" class="w-100 inputs" />
+           </div>
+         </div>
+
+         <!-- Confirm Password -->
+         <div class="my-4 d-flex justify-content-center">
+           <div class="modelHeadingDiv text-start mx-2">Confirm Password</div>
+           <div class="modalValueDiv text-center mx-2">
+             <input type="text" class="w-100 inputs" />
+           </div>
+         </div>
+       </div>
+     </div>
+     <div class="modal-footer d-flex justify-content-center">
+       <button
+         type="button"
+         class="btn text-white w-25"
+         style="background-color: rgb(156, 28, 92)"
+       >
+         Change
+       </button>
+       <button
+         type="button"
+         class="btn text-white w-25"
+         data-bs-dismiss="modal"
+         style="background-color: rgb(156, 28, 92)"
+       >
+         Cancel
+       </button>
+     </div>
+   </div>
+ </div>
+</div>
+
+  <!-- Reset Password Modal -->
+  <div
+    class="modal fade"
+    id="resetPasswordModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body">
+         <div class="text-success text-center fw-bold fs-1"><i class="fa-regular fa-circle-check"></i></div>
+         <div class="text-dark text-center fw-bold fs-3">Password Reset!</div>
+         <div><p class="text-dark text-center fs-5">Your new password is: </p></div>
+        </div>
+      
+      </div>
+    </div>
+  </div>
+
+</div>
