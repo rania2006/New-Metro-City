@@ -1,1 +1,261 @@
-<p>vehicle works!</p>
+<div class="body">
+    <div class="backpress">
+      <div class="backpressbtn">
+         <a [routerLink]="['/fuel',{
+          outlets:{'metroCity':['inventory']}
+        }]">
+          <i class="fa-solid fa-circle-arrow-left"></i>
+         </a> 
+      </div>
+  </div>
+    <div class="outerContainer">
+      <div class="d-flex justify-content-end newPurchaseBtndiv">
+        <button
+          class="addUserBtn"
+          data-bs-toggle="modal"
+          data-bs-target="#addUserModal"
+        >
+          Add Vehicle
+        </button>
+      </div>
+      <div class="tableContainer">
+        <table class="table table-striped text-center">
+          <thead>
+            <tr class="tableHeadings">
+              <th scope="col-4">#</th>
+              <th scope="col-4">Vehicle #</th>
+              <th scope="col-2">Vehicle Make</th>
+              <th scope="col-2">Vehicle Model</th>
+              <th scope="col-2">Driver Name</th>
+              <th scope="col-2">Department</th>
+              <th scope="col-2">Monthly Allowed Fuel</th>
+              <th scope="col-2">Fuel Type</th>
+              <th scope="col-2">Action</th>
+            </tr>
+          </thead>
+          <tbody class="">
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td> <button
+                    class="edit"
+                    data-bs-toggle="modal"
+                    data-bs-target="#editVehicleModal"
+                  >
+                    Edit
+                  </button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  
+    <!-- Add Vehicle Modal -->
+    <div
+      class="modal fade"
+      id="addUserModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5
+              class="modal-title fw-bold"
+              id="exampleModalLabel"
+              style="color: rgb(156, 28, 92)"
+            >
+              ADD Vehicle
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="addUserContainer">
+              <!-- Vehicle # -->
+              <div class="my-4 d-flex justify-content-center">
+                <div class="modelHeadingDiv text-start mx-2">Vehicle #</div>
+                <div class="modalValueDiv text-center mx-2">
+                  <input type="text" class="w-100 inputs" />
+                </div>
+              </div>
+              <!-- Vehicle Make -->
+              <div class="my-4 d-flex justify-content-center">
+                <div class="modelHeadingDiv text-start mx-2">Vehicle Make</div>
+                <div class="modalValueDiv text-center mx-2">
+                  <input type="text" class="w-100 inputs" />
+                </div>
+              </div>
+              <!-- Vehicle Model -->
+              <div class="my-4 d-flex justify-content-center">
+                <div class="modelHeadingDiv text-start mx-2">Vehicle Model</div>
+                <div class="modalValueDiv text-center mx-2">
+                  <input type="text" class="w-100 inputs" />
+                </div>
+              </div>
+              <!-- Driver Name -->
+              <div class="my-4 d-flex justify-content-center">
+                <div class="modelHeadingDiv text-start mx-2">Driver Name</div>
+                <div class="modalValueDiv text-center mx-2">
+                  <input type="text" class="w-100 inputs" />
+                </div>
+              </div>
+  
+              <!-- Department -->
+              <div class="my-4 d-flex justify-content-center">
+                <div class="modelHeadingDiv text-start mx-2">Department</div>
+                <div class="modalValueDiv text-center mx-2">
+                  <input type="text" class="w-100 inputs" />
+                </div>
+              </div>
+  
+              <!-- Fuel Type -->
+              <div class="my-4 d-flex justify-content-center">
+                <div class="modelHeadingDiv text-start mx-2">Monthly Allowed Fuel</div>
+                <div class="modalValueDiv text-center mx-2">
+                  <input type="text" class="w-100 inputs" />
+                </div>
+              </div>
+
+              <div class="my-4 d-flex justify-content-center">
+                <div class="modelHeadingDiv text-start mx-2"> Fuel Type</div>
+                <div class="modalValueDiv text-center mx-2">
+                  <input type="text" class="w-100 inputs" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer d-flex justify-content-center">
+            <button
+              type="button"
+              class="btn text-white w-25"
+              style="background-color: rgb(156, 28, 92)"
+            >
+              Add
+            </button>
+            <button
+              type="button"
+              class="btn text-white w-25"
+              data-bs-dismiss="modal"
+              style="background-color: rgb(156, 28, 92)"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  <!-- Edit User Modal -->
+  <div
+  class="modal fade"
+  id="editVehicleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+  >
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5
+          class="modal-title fw-bold"
+          id="exampleModalLabel"
+          style="color: rgb(156, 28, 92)"
+        >
+          ADD Vehicle
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="addUserContainer">
+          <!-- Vehicle # -->
+          <div class="my-4 d-flex justify-content-center">
+            <div class="modelHeadingDiv text-start mx-2">Vehicle #</div>
+            <div class="modalValueDiv text-center mx-2">
+              <input type="text" class="w-100 inputs" />
+            </div>
+          </div>
+          <!-- Vehicle Make -->
+          <div class="my-4 d-flex justify-content-center">
+            <div class="modelHeadingDiv text-start mx-2">Vehicle Make</div>
+            <div class="modalValueDiv text-center mx-2">
+              <input type="text" class="w-100 inputs" />
+            </div>
+          </div>
+          <!-- Vehicle Model -->
+          <div class="my-4 d-flex justify-content-center">
+            <div class="modelHeadingDiv text-start mx-2">Vehicle Model</div>
+            <div class="modalValueDiv text-center mx-2">
+              <input type="text" class="w-100 inputs" />
+            </div>
+          </div>
+          <!-- Driver Name -->
+          <div class="my-4 d-flex justify-content-center">
+            <div class="modelHeadingDiv text-start mx-2">Driver Name</div>
+            <div class="modalValueDiv text-center mx-2">
+              <input type="text" class="w-100 inputs" />
+            </div>
+          </div>
+
+          <!-- Department -->
+          <div class="my-4 d-flex justify-content-center">
+            <div class="modelHeadingDiv text-start mx-2">Department</div>
+            <div class="modalValueDiv text-center mx-2">
+              <input type="text" class="w-100 inputs" />
+            </div>
+          </div>
+
+          <!-- Fuel Type -->
+          <div class="my-4 d-flex justify-content-center">
+            <div class="modelHeadingDiv text-start mx-2">Monthly Allowed Fuel</div>
+            <div class="modalValueDiv text-center mx-2">
+              <input type="text" class="w-100 inputs" />
+            </div>
+          </div>
+
+          <div class="my-4 d-flex justify-content-center">
+            <div class="modelHeadingDiv text-start mx-2"> Fuel Type</div>
+            <div class="modalValueDiv text-center mx-2">
+              <input type="text" class="w-100 inputs" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button
+          type="button"
+          class="btn text-white w-25"
+          style="background-color: rgb(156, 28, 92)"
+        >
+          Save
+        </button>
+        <button
+          type="button"
+          class="btn text-white w-25"
+          data-bs-dismiss="modal"
+          style="background-color: rgb(156, 28, 92)"
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+  </div>
+  
+   

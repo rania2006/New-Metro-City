@@ -1,27 +1,233 @@
 <div class="body">
-    <div class="outerContainer">
-      <div class="backpress">
-        <div class="backpressbtn">
-          <a
-            [routerLink]="[
-              '/fuel',
-              {
-                outlets: { metroCity: ['inventory'] }
-              }
-            ]"
-          >
-            <i class="fa-solid fa-circle-arrow-left"></i>
-          </a>
+  <div class="outerContainer d-flex">
+    <div class="backpress">
+      <div class="">
+        <a [routerLink]="['/fuel', { outlets: { metroCity: ['inventory'] } }]">
+          <i class="fa-solid fa-circle-arrow-left backpressbtn"></i>
+        </a>
+      </div>
+    </div>
+    <div class="innerContainer row">
+      <!-- new purchase box -->
+      <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-12 col-sm-12 col-12">
+        <div class="newPurchaseBox mx-2">
+          <div class="fw-bold fs-5 headingColor">NEW PURCHASE</div>
+          <div class="fw-bold text-secondary fs-5 w-100">
+            <hr />
+          </div>
+
+          <div class="newPurchaseContainer">
+            <!-- Fuel Type -->
+            <div class="my-2">
+              <label for="dropdown">Fuel Type</label>
+              <div
+                ngbDropdown
+                class="nav-item dropdown dropdownBorder"
+                style="height: 45px"
+              >
+                <a
+                  class="nav-link dropdown-toggle d-flex justify-content-end w-100 align-items-center p-2"
+                  href="#"
+                  style="height: 48px"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="true"
+                  ngbDropdownToggle
+                >
+                </a>
+                <ul class="dropdown-menu w-100" ngbDropdownMenu>
+                  <li>
+                    <a class="dropdown-item" ngbDropdownItem>Admin</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" ngbDropdownItem>Fuel</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Quantity -->
+            <div class="my-2">
+              <label for="quantity">Quantity</label>
+              <div class="InputFields">
+                <input type="text" placeholder="" id="quantity" />
+              </div>
+            </div>
+
+            <!-- Total Price -->
+            <div class="my-2">
+              <label for="totalPrice">Total Price</label>
+              <div class="InputFields">
+                <input type="number" placeholder="" id="totalPrice" />
+              </div>
+            </div>
+
+            <!-- Storage -->
+            <div class="my-2">
+              <label for="dropdown">Storage</label>
+              <div
+                ngbDropdown
+                class="nav-item dropdown dropdownBorder"
+                style="height: 45px"
+              >
+                <a
+                  class="nav-link dropdown-toggle d-flex justify-content-end w-100 align-items-center p-2"
+                  href="#"
+                  style="height: 48px"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="true"
+                  ngbDropdownToggle
+                >
+                </a>
+                <ul class="dropdown-menu w-100" ngbDropdownMenu>
+                  <li>
+                    <a class="dropdown-item" ngbDropdownItem>room 1</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" ngbDropdownItem>room 2</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- recieving Date -->
+            <div class="my-2">
+              <label for="recievingdate">Recieving Date</label>
+              <div class="InputFields">
+                <input type="date" placeholder="" id="recievingdate" />
+              </div>
+            </div>
+
+            <!-- Save button -->
+            <div class="my-3 d-flex justify-content-end">
+              <button class="savebtn">Save</button>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="fw-bold text-secondary fs-5">Inventory</div>
-      <div class="fw-bold text-secondary fs-5 w-100">
-        <hr />
+
+      <!-- added purchase box -->
+      <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-12 col-sm-12 col-12">
+        <div class="addedPurchaseBox mx-2">
+          <div class="fw-bold fs-5 headingColor">ADDED PURCHASE</div>
+          <div class="fw-bold text-secondary fs-5 w-100">
+            <hr />
+          </div>
+
+          <div class="addedPurchaseContainer">
+            <table class="table table-striped text-center">
+              <thead>
+                <tr class="TableheadingDiv">
+                  <th scope="col">FUEL TYPE</th>
+                  <th scope="col">QUANTITY</th>
+                  <th scope="col">TOTAL PRICE</th>
+                  <th scope="col">STORES</th>
+                  <th scope="col">ACTION</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>petrol</th>
+                  <td>100L</td>
+                  <td>50,000 PKR</td>
+                  <td>Store 1</td>
+                  <td>
+                    <div>
+                      <button class="editbtn">Edit</button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
-  
-      <div class="innerContainer">
-          
+
+      <!-- purchase details box -->
+      <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+        <div class="purchaseDetailsBox mx-2">
+          <div class="fw-bold fs-5 headingColor">PURCHASE DETAILS</div>
+          <div class="fw-bold text-secondary fs-5 w-100">
+            <hr />
+          </div>
+
+          <div class="purchaseDetailsContainer">
+            <div class="row">
+              <div
+                class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12"
+              >
+                <!-- Invoice # -->
+                <div class="my-2">
+                  <label for="invoiceNo">Invoice #</label>
+                  <div class="InputFields">
+                    <input type="number" placeholder="" id="invoiceNo" />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12"
+              >
+                <!-- Supplier -->
+                <div class="my-2">
+                  <label for="supplier">Supplier</label>
+                  <div class="InputFields">
+                    <input type="text" placeholder="" id="supplier" />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12"
+              >
+                <!-- payment -->
+                <div class="my-2">
+                  <label for="supplier">Payment</label>
+                  <div
+                    ngbDropdown
+                    class="nav-item dropdown dropdownBorder"
+                    style="height: 45px"
+                  >
+                    <a
+                      class="nav-link dropdown-toggle d-flex justify-content-end w-100 align-items-center p-2"
+                      href="#"
+                      style="height: 48px"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="true"
+                      ngbDropdownToggle
+                    >
+                    </a>
+                    <ul class="dropdown-menu w-100" ngbDropdownMenu>
+                      <li>
+                        <a class="dropdown-item" ngbDropdownItem>Cash</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" ngbDropdownItem>Credit</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12"
+              >
+                <!-- Paid -->
+                <div class="my-2">
+                  <label for="paid">Paid</label>
+                  <div class="InputFields">
+                    <input type="text" placeholder="" id="paid" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- save button -->
+            <div class="my-3 d-flex justify-content-end">
+              <button class="savebtn">Save</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  
+</div>

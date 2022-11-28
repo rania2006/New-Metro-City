@@ -11,6 +11,8 @@ Chart.register(...registerables);
 })
 export class DashboardComponent implements OnInit {
 
+  chartConsumption;
+  chartPurchase;
   constructor() { }
 
   ngOnInit(): void {
@@ -18,7 +20,7 @@ export class DashboardComponent implements OnInit {
   }
 
   RenderChart(){
-    const chartConsumption = new Chart("barchart_Consumption",{
+     this.chartConsumption = new Chart("barchart_Consumption",{
       type: 'bar',
       data: {
         labels: ['January',
@@ -60,7 +62,7 @@ export class DashboardComponent implements OnInit {
       }
     });
 
-    const chartPurchase = new Chart("barchart_Purchase", {
+    this.chartPurchase = new Chart("barchart_Purchase", {
       type: 'bar',
       data: {
         labels: [

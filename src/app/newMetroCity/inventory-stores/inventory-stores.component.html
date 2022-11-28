@@ -1,5 +1,5 @@
 <div class="body">
-    <div class="outerContainer">
+    <div class="outerContainer d-flex">
       <div class="backpress">
         <div class="backpressbtn">
           <a
@@ -14,14 +14,224 @@
           </a>
         </div>
       </div>
-      <div class="fw-bold text-secondary fs-5">Inventory</div>
-      <div class="fw-bold text-secondary fs-5 w-100">
-        <hr />
-      </div>
   
       <div class="innerContainer">
-          
+        <div class="d-flex justify-content-between">
+          <div class="fw-bold fs-4 headingColor">STORES</div>
+          <div>
+            <button class="addStorebtn" data-bs-toggle="modal"
+            data-bs-target="#addStoreModal">Add Store</button>
+          </div>
+        </div>
+        <div class="fw-bold text-secondary fs-5 w-100">
+          <hr />
+        </div>
+
+        <div class="StoreContainer">
+          <table class="table table-striped text-center">
+            <thead>
+              <tr class="TableheadingDiv">
+                <th scope="col">NAME</th>
+                <th scope="col">INCHARGE</th>
+                <th scope="col">CONTACT NO</th>
+                <th scope="col">TOTAL STOCK</th>
+                <th scope="col">ADDRESS</th>
+                <th scope="col">ACTION</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>Store 1</th>
+                <td>Aslam</td>
+                <td>03245678239</td>
+                <td>5000L</td>
+                <td>London</td>
+                <td>
+                  <div>
+                    <button class="editbtn mx-2" data-bs-toggle="modal"
+                    data-bs-target="#editStoreModal">Edit</button>
+                    <button class="deletebtn mx-2">Delete</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
+
+    <!-- Add Store Module -->
+    <div
+    class="modal fade"
+    id="addStoreModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5
+            class="modal-title fw-bold"
+            id="exampleModalLabel"
+            style="color: rgb(156, 28, 92)"
+          >
+            ADD STORE
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <div class="addUserContainer">
+            <!-- Store Name -->
+            <div class="my-4 d-flex justify-content-center">
+              <div class="modelHeadingDiv text-start mx-2">Store Name</div>
+              <div class="modalValueDiv text-center mx-2">
+                <input type="text" class="w-100 inputs" />
+              </div>
+            </div>
+            <!-- Incharge -->
+            <div class="my-4 d-flex justify-content-center">
+              <div class="modelHeadingDiv text-start mx-2">Incharge</div>
+              <div class="modalValueDiv text-center mx-2">
+                <input type="text" class="w-100 inputs" />
+              </div>
+            </div>
+            <!-- Contact No -->
+            <div class="my-4 d-flex justify-content-center">
+              <div class="modelHeadingDiv text-start mx-2">Contact No</div>
+              <div class="modalValueDiv text-center mx-2">
+                <input type="text" class="w-100 inputs" />
+              </div>
+            </div>
+            <!-- Total Stock -->
+            <div class="my-4 d-flex justify-content-center">
+              <div class="modelHeadingDiv text-start mx-2">Total Stock</div>
+              <div class="modalValueDiv text-center mx-2">
+                <input type="number" class="w-100 inputs" />
+              </div>
+            </div>
+
+            <!-- Address -->
+            <div class="my-4 d-flex justify-content-center">
+              <div class="modelHeadingDiv text-start mx-2">Address</div>
+              <div class="modalValueDiv text-center mx-2">
+                <input type="text" class="w-100 inputs" />
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="modal-footer d-flex justify-content-center">
+          <button
+            type="button"
+            class="btn text-white w-25"
+            style="background-color: rgb(156, 28, 92)"
+          >
+            Add
+          </button>
+          <button
+            type="button"
+            class="btn text-white w-25"
+            data-bs-dismiss="modal"
+            style="background-color: rgb(156, 28, 92)"
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   <!-- Edit Store Module -->
+   <div
+   class="modal fade"
+   id="editStoreModal"
+   tabindex="-1"
+   aria-labelledby="exampleModalLabel"
+   aria-hidden="true"
+ >
+   <div class="modal-dialog modal-dialog-centered">
+     <div class="modal-content">
+       <div class="modal-header">
+         <h5
+           class="modal-title fw-bold"
+           id="exampleModalLabel"
+           style="color: rgb(156, 28, 92)"
+         >
+           EDIT STORE
+         </h5>
+         <button
+           type="button"
+           class="btn-close"
+           data-bs-dismiss="modal"
+           aria-label="Close"
+         ></button>
+       </div>
+       <div class="modal-body">
+         <div class="addUserContainer">
+           <!-- Store Name -->
+           <div class="my-4 d-flex justify-content-center">
+             <div class="modelHeadingDiv text-start mx-2">Store Name</div>
+             <div class="modalValueDiv text-center mx-2">
+               <input type="text" class="w-100 inputs" />
+             </div>
+           </div>
+           <!-- Incharge -->
+           <div class="my-4 d-flex justify-content-center">
+             <div class="modelHeadingDiv text-start mx-2">Incharge</div>
+             <div class="modalValueDiv text-center mx-2">
+               <input type="text" class="w-100 inputs" />
+             </div>
+           </div>
+           <!-- Contact No -->
+           <div class="my-4 d-flex justify-content-center">
+             <div class="modelHeadingDiv text-start mx-2">Contact No</div>
+             <div class="modalValueDiv text-center mx-2">
+               <input type="text" class="w-100 inputs" />
+             </div>
+           </div>
+           <!-- Total Quantity -->
+           <div class="my-4 d-flex justify-content-center">
+             <div class="modelHeadingDiv text-start mx-2">Total Quantity</div>
+             <div class="modalValueDiv text-center mx-2">
+               <input type="number" class="w-100 inputs" />
+             </div>
+           </div>
+
+           <!-- Address -->
+           <div class="my-4 d-flex justify-content-center">
+             <div class="modelHeadingDiv text-start mx-2">Address</div>
+             <div class="modalValueDiv text-center mx-2">
+               <input type="text" class="w-100 inputs" />
+             </div>
+           </div>
+
+         </div>
+       </div>
+       <div class="modal-footer d-flex justify-content-center">
+         <button
+           type="button"
+           class="btn text-white w-25"
+           style="background-color: rgb(156, 28, 92)"
+         >
+           Add
+         </button>
+         <button
+           type="button"
+           class="btn text-white w-25"
+           data-bs-dismiss="modal"
+           style="background-color: rgb(156, 28, 92)"
+         >
+           Cancel
+         </button>
+       </div>
+     </div>
+   </div>
+ </div>
   </div>
   

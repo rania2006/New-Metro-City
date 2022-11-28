@@ -1,27 +1,255 @@
 <div class="body">
-    <div class="outerContainer">
-      <div class="backpress">
-        <div class="backpressbtn">
-          <a
-            [routerLink]="[
-              '/fuel',
-              {
-                outlets: { metroCity: ['inventory'] }
-              }
-            ]"
-          >
-            <i class="fa-solid fa-circle-arrow-left"></i>
-          </a>
+  <div class="outerContainer d-flex">
+    <div class="backpress">
+      <div class="backpressbtn">
+        <a
+          [routerLink]="[
+            '/fuel',
+            {
+              outlets: { metroCity: ['inventory'] }
+            }
+          ]"
+        >
+          <i class="fa-solid fa-circle-arrow-left"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="innerContainer">
+      <div class="d-flex justify-content-between">
+        <div class="fw-bold fs-4 headingColor">SUPPLIER</div>
+        <div>
+          <button class="addSupplierbtn" data-bs-toggle="modal"
+          data-bs-target="#addSupplierModal">Add Supplier</button>
         </div>
       </div>
-      <div class="fw-bold text-secondary fs-5">Inventory</div>
       <div class="fw-bold text-secondary fs-5 w-100">
         <hr />
       </div>
-  
-      <div class="innerContainer">
-          
+
+      <div class="SupplierContainer">
+        <table class="table table-striped text-center">
+          <thead>
+            <tr class="TableheadingDiv">
+              <th scope="col">NAME</th>
+              <th scope="col">INCHARGE</th>
+              <th scope="col">CONTACT NO</th>
+              <th scope="col">TOTAL QUANTITY</th>
+              <th scope="col">ADDRESS</th>
+              <th scope="col">ACTION</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>Store 1</th>
+              <td>Aslam</td>
+              <td>03245678239</td>
+              <td>5000L</td>
+              <td>London</td>
+              <td>
+                <div>
+                  <button class="editbtn mx-2" data-bs-toggle="modal"
+                  data-bs-target="#editSupplierModal">Edit</button>
+                  <button class="deletebtn mx-2">Delete</button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
-  
+
+ <!--Add Supplier Module -->
+ <div
+ class="modal fade"
+ id="addSupplierModal"
+ tabindex="-1"
+ aria-labelledby="exampleModalLabel"
+ aria-hidden="true"
+>
+ <div class="modal-dialog modal-dialog-centered">
+   <div class="modal-content">
+     <div class="modal-header">
+       <h5
+         class="modal-title fw-bold"
+         id="exampleModalLabel"
+         style="color: rgb(156, 28, 92)"
+       >
+        ADD SUPPLIER
+       </h5>
+       <button
+         type="button"
+         class="btn-close"
+         data-bs-dismiss="modal"
+         aria-label="Close"
+       ></button>
+     </div>
+     <div class="modal-body">
+       <div class="addUserContainer">
+         <!-- name -->
+         <div class="my-4 d-flex justify-content-center">
+           <div class="modelHeadingDiv text-start mx-2">Name</div>
+           <div class="modalValueDiv text-center mx-2">
+             <input type="text" class="w-100 inputs" />
+           </div>
+         </div>
+         <!-- Fuel Type -->
+         <div class="my-4 d-flex justify-content-center">
+           <div class="modelHeadingDiv text-start mx-2">Fuel Type</div>
+           <div class="modalValueDiv text-center mx-2">
+             <input type="text" class="w-100 inputs" />
+           </div>
+         </div>
+         <!-- Total Quantity -->
+         <div class="my-4 d-flex justify-content-center">
+           <div class="modelHeadingDiv text-start mx-2">Total Quantity</div>
+           <div class="modalValueDiv text-center mx-2">
+             <input type="number" class="w-100 inputs" />
+           </div>
+         </div>
+         <!-- Contact No -->
+         <div class="my-4 d-flex justify-content-center">
+           <div class="modelHeadingDiv text-start mx-2">Contact No</div>
+           <div class="modalValueDiv text-center mx-2">
+             <input type="number" class="w-100 inputs" />
+           </div>
+         </div>
+
+         <!-- CNIC -->
+         <div class="my-4 d-flex justify-content-center">
+           <div class="modelHeadingDiv text-start mx-2">CNIC</div>
+           <div class="modalValueDiv text-center mx-2">
+             <input type="number" class="w-100 inputs" />
+           </div>
+         </div>
+
+         <!-- status -->
+         <div class="my-4 d-flex justify-content-center">
+           <div class="modelHeadingDiv text-start mx-2">Status</div>
+           <div class="modalValueDiv text-center mx-2">
+             <input type="text" class="w-100 inputs" />
+           </div>
+         </div>
+
+       </div>
+     </div>
+     <div class="modal-footer d-flex justify-content-center">
+       <button
+         type="button"
+         class="btn text-white w-25"
+         style="background-color: rgb(156, 28, 92)"
+       >
+         Add
+       </button>
+       <button
+         type="button"
+         class="btn text-white w-25"
+         data-bs-dismiss="modal"
+         style="background-color: rgb(156, 28, 92)"
+       >
+         Cancel
+       </button>
+     </div>
+   </div>
+ </div>
+</div>
+
+  <!--Edit Supplier Module -->
+  <div
+  class="modal fade"
+  id="editSupplierModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5
+          class="modal-title fw-bold"
+          id="exampleModalLabel"
+          style="color: rgb(156, 28, 92)"
+        >
+         EDIT SUPPLIER
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="addUserContainer">
+          <!-- name -->
+          <div class="my-4 d-flex justify-content-center">
+            <div class="modelHeadingDiv text-start mx-2">Name</div>
+            <div class="modalValueDiv text-center mx-2">
+              <input type="text" class="w-100 inputs" />
+            </div>
+          </div>
+          <!-- Fuel Type -->
+          <div class="my-4 d-flex justify-content-center">
+            <div class="modelHeadingDiv text-start mx-2">Fuel Type</div>
+            <div class="modalValueDiv text-center mx-2">
+              <input type="text" class="w-100 inputs" />
+            </div>
+          </div>
+          <!-- Total Quantity -->
+          <div class="my-4 d-flex justify-content-center">
+            <div class="modelHeadingDiv text-start mx-2">Total Quantity</div>
+            <div class="modalValueDiv text-center mx-2">
+              <input type="number" class="w-100 inputs" />
+            </div>
+          </div>
+          <!-- Contact No -->
+          <div class="my-4 d-flex justify-content-center">
+            <div class="modelHeadingDiv text-start mx-2">Contact No</div>
+            <div class="modalValueDiv text-center mx-2">
+              <input type="number" class="w-100 inputs" />
+            </div>
+          </div>
+
+          <!-- CNIC -->
+          <div class="my-4 d-flex justify-content-center">
+            <div class="modelHeadingDiv text-start mx-2">CNIC</div>
+            <div class="modalValueDiv text-center mx-2">
+              <input type="number" class="w-100 inputs" />
+            </div>
+          </div>
+
+          <!-- status -->
+          <div class="my-4 d-flex justify-content-center">
+            <div class="modelHeadingDiv text-start mx-2">Status</div>
+            <div class="modalValueDiv text-center mx-2">
+              <input type="text" class="w-100 inputs" />
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button
+          type="button"
+          class="btn text-white w-25"
+          style="background-color: rgb(156, 28, 92)"
+        >
+          Add
+        </button>
+        <button
+          type="button"
+          class="btn text-white w-25"
+          data-bs-dismiss="modal"
+          style="background-color: rgb(156, 28, 92)"
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+

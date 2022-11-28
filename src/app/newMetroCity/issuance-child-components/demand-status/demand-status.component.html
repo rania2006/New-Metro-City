@@ -1,0 +1,188 @@
+<div class="body">
+  <div class="backButton " [routerLink]="['/fuel',{
+       outlets:{'metroCity':['issuance']}
+     }]">
+    <i class="fa-solid fa-arrow-left"></i>
+  </div>
+  <!-- Table container for Approval Requests -->
+  <div class="tableContainer">
+    <table class="table table-striped text-center">
+      <thead>
+        <tr class="tableHeadings">
+          <th scope="col">SR.</th>
+          <th scope="col">VEHICLE NUMBER</th>
+          <th scope="col">DRIVER NAME</th>
+          <th scope="col">DEPARTMENT NAME</th>
+          <th scope="col">DEMAND</th>
+          <th scope="col">APPROVED</th>
+          <th scope="col">STATUS</th>
+          <th scope="col">ACTION</th>
+        </tr>
+      </thead>
+      <tbody class="">
+        <tr class="accept">
+          <th scope="row">1</th>
+          <td>ABC-100P</td>
+          <td>Hassan</td>
+          <td>Electrical</td>
+          <td>50L</td>
+          <td>50L</td>
+          <td>Approved</td>
+          <td>
+            <a>
+              <button class="refuel text-white" data-bs-toggle="modal" data-bs-target="#exampleModal">Refuel</button>
+            </a>
+          </td>
+        </tr>
+        <tr class="change">
+          <th scope="row">1</th>
+          <td>ABC-100P</td>
+          <td>Ali</td>
+          <td>Electrical</td>
+          <td>100L</td>
+          <td>60L</td>
+          <td>Approved With Changes</td>
+          <td>
+            <a>
+              <button class="refuel text-white" data-bs-toggle="modal" data-bs-target="#exampleModal">Refuel</button>
+            </a>
+          </td>
+        </tr>
+        <tr class="denied">
+          <th scope="row">1</th>
+          <td>ABC-100P</td>
+          <td>Arshad Aslam</td>
+          <td>Electrical</td>
+          <td>80L</td>
+          <td>0L</td>
+          <td>Denied</td>
+          <td>
+            <a>
+              <button class="refuel text-white" data-bs-toggle="modal" data-bs-target="#exampleModal">Refuel</button>
+            </a>
+          </td>
+        </tr>
+        <tr class="accept">
+          <th scope="row">1</th>
+          <td>ABC-100P</td>
+          <td>Hassan</td>
+          <td>Electrical</td>
+          <td>50L</td>
+          <td>50L</td>
+          <td>Approved</td>
+          <td>
+            <a>
+              <button class="refuel text-white" data-bs-toggle="modal" data-bs-target="#exampleModal">Refuel</button>
+            </a>
+          </td>
+        </tr>
+        <tr class="change">
+          <th scope="row">1</th>
+          <td>ABC-100P</td>
+          <td>Ali</td>
+          <td>Electrical</td>
+          <td>100L</td>
+          <td>60L</td>
+          <td>Approved With Changes</td>
+          <td>
+            <a>
+              <button class="refuel text-white" data-bs-toggle="modal" data-bs-target="#exampleModal">Refuel</button>
+            </a>
+          </td>
+        </tr>
+        <tr class="denied">
+          <th scope="row">1</th>
+          <td>ABC-100P</td>
+          <td>Arshad Aslam</td>
+          <td>Electrical</td>
+          <td>80L</td>
+          <td>0L</td>
+          <td>Denied</td>
+          <td>
+            <a>
+              <button class="refuel text-white" data-bs-toggle="modal" data-bs-target="#exampleModal">Refuel</button>
+            </a>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+
+ 
+  <!-- Modal -->
+
+
+<div
+    class="modal fade"
+    id="exampleModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5
+            class="modal-title fw-bold"
+            id="exampleModalLabel"
+            style="color: rgb(156, 28, 92)"
+          >
+            Refuel
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <div class="VehicleDetailsBox">
+            <!-- current stock -->
+            <div class="my-4 d-flex">
+              <div class="headingDiv w-50 text-center">Vehicle Number</div>
+              <div class="valueDiv w-50 text-center"> ABC-1234-P</div>
+            </div>
+            <div class="my-4 d-flex">
+              <div class="headingDiv w-50 text-center">Driver Name</div>
+              <div class="valueDiv w-50 text-center">John</div>
+            </div>
+            <div class="my-4 d-flex">
+              <div class="headingDiv w-50 text-center">Department</div>
+              <div class="valueDiv w-50 text-center"> Electrical</div>
+            </div>
+            <div class="my-4 d-flex">
+              <div class="headingDiv w-50 text-center">Fuel Type</div>
+              <div class="valueDiv w-50 text-center"> Petrol</div>
+            </div>
+            <div class="my-4 d-flex">
+              <div class="headingDiv w-50 text-center">Demand</div>
+          
+              <input type="text" class="w-50 text-center valueDiv demandDiv" value="{{demandValue}}">
+            </div>
+           
+        </div>
+        <div class="modal-footer d-flex justify-content-center">
+          <button
+            type="button"
+            class="btn text-white w-25"
+            style="background-color: rgb(156, 28, 92)"
+          >
+            Yes
+          </button>
+          <button
+            type="button"
+            class="btn text-white w-25"
+            data-bs-dismiss="modal"
+            style="background-color: rgb(156, 28, 92)"
+          >
+            No
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  

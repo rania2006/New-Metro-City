@@ -10,7 +10,9 @@
                   </div>
                 <div class="reportContainer">
                     <div>
-                        <a class="fw-bold text-dark">Daily Sales Report</a>
+                        <a class="fw-bold text-dark"  [routerLink]="[
+                        '/fuel', {outlets: { metroCity: ['report-details'] }
+                      }]">Daily Sales Report</a>
                     </div>
                     <div>
                         <a class="fw-bold text-dark">Business Sales Report</a>

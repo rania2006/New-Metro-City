@@ -1,0 +1,62 @@
+.body{
+    width: 100%;
+    height: 600px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px;
+    background-image: url("../../../assets/img/issuancebgi.png");  
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+a{
+    text-decoration: none;
+}
+.card{
+    width:200px;
+    height:180px;
+    cursor: pointer;
+    padding:5px;
+}
+
+.sendDemand{
+    
+    background: #ff6682;
+}
+.iconText{
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding-top:8px;
+}
+.card img{
+    width:60px;
+
+}
+svg{
+    fill:white;
+}
+.card .text{
+    font-size: 21px;
+    color:#fff;
+    font-weight: 700;
+    padding-bottom:13px;
+
+}
+.doublearrow{
+    display:flex;
+    justify-content: end;
+    padding-top:30px;
+    padding-right:5px;
+    font-size: 20px;
+    color:#fff;
+}
+.demandStatus{
+    background: #8189eb;
+}
+.fa-share-from-square,.fa-people-group{
+    color:#fff;
+    font-size: 45px;
+    padding-bottom:15px;
+}

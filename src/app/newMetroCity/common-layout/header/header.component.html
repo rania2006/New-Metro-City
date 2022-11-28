@@ -1,6 +1,10 @@
-<nav class="navbar navbar-expand-lg bg-white text-center shadow">
-    <div class="container-fluid">
-      <a class="navbar-brand logo" routerLink="/dashboard">Plusone POS</a>
+<nav class="navbar navbar-expand-lg text-center">
+   
+      <a class="navbar-brand logo" [routerLink]="['/fuel',{
+        outlets:{'metroCity':['dashboard']}
+      }]">
+        <img src="../../../../assets/img/logo_NMC_white.png" class="logoImage" alt="">
+      </a>
       <button
         class="navbar-toggler"
         type="button"
@@ -21,25 +25,10 @@
         id="leftListOnCollapse"
           class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center align-item-center "
         >
-          <li ngbDropdown class="nav-item dropdown">
-            <div class="orderTaker">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="true"
-              ngbDropdownToggle
-            >
-              Order Taker
-            </a>
-            <ul class="dropdown-menu" ngbDropdownMenu>
-              <li><a class="dropdown-item" href="#" ngbDropdownItem>John</a></li>
-              <li><a class="dropdown-item" href="#" ngbDropdownItem>chris</a></li>
-              <li><a class="dropdown-item" href="#" ngbDropdownItem>kim</a></li>
-            </ul>
-            </div>
-          </li>
+        
+      </ul>
+      <ul id="rightListOnCollapse" class="navbar-nav navbar-right">
+        <!-- searchbar -->
           <li class="nav-item">
             <div class="searchDiv text-center">
               <input type="search" placeholder="Search" id="searchbar" />
@@ -48,8 +37,8 @@
               </button>
             </div>
           </li>
-        </ul>
-        <ul id="rightListOnCollapse" class="navbar-nav navbar-right">
+
+          <!-- notification dropdown -->
           <li ngbDropdown class="nav-item dropdown">
             <a
               ngbDropdownToggle
@@ -60,9 +49,11 @@
               <i class="bellIcon fa fa-bell"></i>
             </a>
           </li>
+
+          <!-- profile setting dropdown -->
           <li ngbDropdown class="nav-item dropdown align-items-center pe-3">
             <a
-              class="nav-link nav-profileName"
+              class="nav-link profileName"
               href="#"
               data-bs-toggle="dropdown"
               ngbDropdownToggle
@@ -129,6 +120,6 @@
           </li>
         </ul>
       </div>
-    </div>
+   
   </nav>
 

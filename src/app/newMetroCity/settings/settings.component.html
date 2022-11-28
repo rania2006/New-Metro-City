@@ -65,26 +65,6 @@
                       </a>
                 </div>
     
-                <!-- privacy -->
-                <div class="box text-dark  m-3">
-                  <a [routerLink]="['/fuel',{
-                    outlets:{'metroCity':['settings-privacy']}
-                  }]">
-                    <div class="row align-items-center h-100">
-                        <div class="text-dark fs-2 text-center">
-                            <i class="fa-solid fa-user-shield"></i>
-                        </div>
-                        <div class="textSize text-dark d-flex justify-content-center">
-                          <p>PRIVACY</p>
-                        </div>
-            
-                        <div class="d-flex justify-content-end text-dark fs-6 pe-3">
-                          <i class="fa-solid fa-angles-right"></i>
-                        </div>
-                      </div>
-                      </a>
-                </div>
-    
                 <!-- universal settings -->
                 <div class="box text-dark  m-3">
                   <a [routerLink]="['/fuel',{
@@ -137,14 +117,14 @@
                 <!-- Printing Access -->
                 <div class="box text-dark  m-3">
                   <a [routerLink]="['/fuel',{
-                    outlets:{'metroCity':['settings-printing-access']}
+                    outlets:{'metroCity':['settings-invoice-printing']}
                   }]">
                     <div class="row align-items-center h-100">
                         <div class="text-dark fs-2 text-center">
-                            <i class="fa-solid fa-users-gear"></i>
+                          <i class="fa-solid fa-receipt"></i>
                         </div>
                         <div class="textSize text-dark d-flex justify-content-center">
-                          <p>PRINTING ACCESS</p>
+                          <p>INVOICE PRINTING</p>
                         </div>
             
                         <div class="d-flex justify-content-end text-dark fs-6 pe-3">
