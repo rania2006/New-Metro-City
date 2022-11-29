@@ -43,6 +43,7 @@ import { SettingsModuleAccessComponent } from './newMetroCity/settings-module-ac
 import { SettingsUniversalSettingComponent } from './newMetroCity/settings-universal-setting/settings-universal-setting.component';
 import { SettingsPrinterComponent } from './newMetroCity/settings-printer/settings-printer.component';
 import { SettingsInvoicePrintingComponent } from './newMetroCity/settings-invoice-printing/settings-invoice-printing.component';
+import { NgxPrintElementModule } from 'ngx-print-element';
 
 
 
@@ -85,7 +86,8 @@ import { SettingsInvoicePrintingComponent } from './newMetroCity/settings-invoic
     ReactiveFormsModule,
     AuthModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    NgxPrintElementModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -44,10 +44,10 @@
                     Pdf
                 </button>
 
-                <button class="addUserBtn excel me-2" (click)="exportTableToExcel()">
+                <button class="addUserBtn excel me-2" (click)="exportexcel()">
                     Excel
                 </button>
-                <button class="addUserBtn print">
+                <button class="addUserBtn print" [print]="['dailyReports', config]">
                     Print
                 </button>
             </div>
