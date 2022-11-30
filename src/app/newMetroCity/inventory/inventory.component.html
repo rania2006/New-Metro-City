@@ -7,7 +7,7 @@
         <!-- New Purchase -->
       <a [routerLink]="[
           '/fuel', {outlets: { metroCity: ['inventory-new-purchase'] }
-        }]">
+        }]" [routerLinkActive]="'active'">
         <div class="newPurchase card me-5">
           <div class="iconText">
             <i class="fa-solid fa-cart-arrow-down iconSize"></i>

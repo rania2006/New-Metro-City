@@ -49,7 +49,7 @@ const routes: Routes = [
   children:[
     {path: 'dashboard', component: DashboardComponent, outlet:'metroCity'},
     
-    {path:'issuance', component:IssuanceComponent,outlet:'metroCity'},
+    {path:'issuance', component:IssuanceComponent,outlet:'metroCity'}, 
     {path: 'send-demand', component:SendDemandComponent,outlet:'metroCity'},
     {path: 'demand-details', component:DemandStatusComponent,outlet:'metroCity'},
 

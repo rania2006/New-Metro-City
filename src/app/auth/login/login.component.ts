@@ -32,12 +32,14 @@ export class LoginComponent implements OnInit {
     if(this.LoginForm.valid){
       console.log(this.LoginForm.value);
       this.userApi.userLogin(data);
-      this.LoginForm.reset();
-      alert("Successfully Login");
     }
-    else {
-      return alert("Incorrect entries");
-    }
+   else{
+    this.onInvalidLoginEntries();
+   }
+  }
+  
+  onInvalidLoginEntries(){
+    return alert("Incorrect email/password");
   }
 
 }

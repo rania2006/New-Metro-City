@@ -45,6 +45,8 @@ import { SettingsPrinterComponent } from './newMetroCity/settings-printer/settin
 import { SettingsInvoicePrintingComponent } from './newMetroCity/settings-invoice-printing/settings-invoice-printing.component';
 import { NgxPrintElementModule } from 'ngx-print-element';
 
+import { NgChartsModule } from 'ng2-charts';
+
 
 
 
@@ -87,7 +89,9 @@ import { NgxPrintElementModule } from 'ngx-print-element';
     AuthModule,
     HttpClientModule,
     NgbModule,
-    NgxPrintElementModule
+    NgxPrintElementModule,
+    NgChartsModule
+   
   ],
   providers: [],
   bootstrap: [AppComponent]
