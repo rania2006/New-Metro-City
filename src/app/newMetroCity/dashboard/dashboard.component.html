@@ -100,18 +100,19 @@
           <div class="nameDiv fs-5 fw-bold text-center">CONSUMPTION</div>
           <div class="outerDiv px-5 py-2">
             <div class="chart">
-              <canvas  baseChart
+              <canvas id="barchart_Consumption"></canvas>
+              <!-- <canvas  baseChart
               [data]="barChartData"
               [options]="barChartOptions"
               [plugins]="barChartPlugins"
               [type]="barChartType"
               (chartHover)="chartHovered($event)"
-              (chartClick)="chartClicked($event)"></canvas>
+              (chartClick)="chartClicked($event)"></canvas> -->
             </div>
-            <!-- <div class="btnDiv text-center">
-              <button class="btnofChart">Daily</button>
-              <button class="btnofChart">Monthly</button>
-            </div> -->
+            <div class="btnDiv text-center">
+              <button class="btnofChart" (click)="timeFrame('day')">Daily</button>
+              <button class="btnofChart" (click)="timeFrame('month')">Monthly</button>
+            </div>
           </div>
         </div>
       </div>

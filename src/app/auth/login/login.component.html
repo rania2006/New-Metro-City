@@ -31,6 +31,9 @@
               <div *ngIf="LoginForm.controls['username'].errors['minlength']">
                 <small>Username must be 5 characters long</small>
               </div>
+              <div *ngIf="LoginForm.controls['username'].errors['maxlength']">
+                <small>fiza</small>
+              </div>
             </div>
           </div>
   
@@ -53,11 +56,14 @@
               <div *ngIf="LoginForm.controls['password'].errors['minlength']">
                 <small>Password must be 5 characters long</small>
               </div>
+              <div *ngIf="LoginForm.controls['password'].errors['maxlength']">
+                <small>ranya</small>
+              </div>
             </div>
           </div>
   
           <div class="form-group">
-            <button type="submit" class="submitbtn" routerLink="/main" (click)="onInvalidLoginEntries()">Login Now</button>
+            <button type="submit" class="submitbtn" routerLink="/main" >Login Now</button>
           </div>
         </form>
       </div>

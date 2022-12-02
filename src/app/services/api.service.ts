@@ -30,6 +30,7 @@ export class ApiService {
       },
       error:(err)=>{
         console.log(err.error)
+        alert("Invalid username/password")
       }
     })  
   }
@@ -43,4 +44,5 @@ export class ApiService {
   GetChartInfo(){
     return this.http.get("")
   }
+  
 }

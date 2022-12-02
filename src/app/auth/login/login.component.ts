@@ -19,27 +19,25 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     //validations
     this.LoginForm = this.formbuilder.group({
-      username: ['', [Validators.required, Validators.minLength(5)]],
-      password: ['', [Validators.required, Validators.minLength(5)]]
+      username: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(32)]],
+      password: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(32)]]
     })
   }
 
   //login function
-  onSubmit(data: Login){
+  onSubmit(data1: Login){
     
     this.submitted = true;
 
     if(this.LoginForm.valid){
       console.log(this.LoginForm.value);
-      this.userApi.userLogin(data);
+      this.userApi.userLogin(data1);
+      console.log(data1);
     }
-   else{
-    this.onInvalidLoginEntries();
+   else if(this.LoginForm.invalid && this.LoginForm.dirty){
+     return alert("Incorrect username/password");    
    }
   }
   
-  onInvalidLoginEntries(){
-    return alert("Incorrect email/password");
-  }
 
 }

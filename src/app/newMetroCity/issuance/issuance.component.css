@@ -12,17 +12,31 @@
 a{
     text-decoration: none;
 }
-.card{
+
+/* .card{
+   
+} */
+
+.sendDemand{
     width:200px;
     height:180px;
     cursor: pointer;
     padding:5px;
-}
-
-.sendDemand{
-    
     background: #ff6682;
 }
+
+.demandStatus{
+    width:200px;
+    height:180px;
+    cursor: pointer;
+    padding:5px;
+    background: #8189eb;
+}
+
+.sendDemand:hover, .demandStatus:hover{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
 .iconText{
     display:flex;
     align-items: center;
@@ -30,20 +44,22 @@ a{
     justify-content: center;
     padding-top:8px;
 }
+
 .card img{
     width:60px;
-
 }
+
 svg{
     fill:white;
 }
+
 .card .text{
     font-size: 21px;
     color:#fff;
     font-weight: 700;
     padding-bottom:13px;
-
 }
+
 .doublearrow{
     display:flex;
     justify-content: end;
@@ -52,9 +68,8 @@ svg{
     font-size: 20px;
     color:#fff;
 }
-.demandStatus{
-    background: #8189eb;
-}
+
+
 .fa-share-from-square,.fa-people-group{
     color:#fff;
     font-size: 45px;

@@ -14,17 +14,30 @@ a{
     text-decoration: none;
 }
 
-.card{
+/* .card{
+   
+} */
+
+.pendingRequest{
     width:200px;
     height:180px;
     cursor: pointer;
     padding:5px;
-}
-
-.sendDemand{
-    
     background: #ff6682;
 }
+
+.previousStatus{
+    width:200px;
+    height:180px;
+    cursor: pointer;
+    padding:5px;
+    background: #8189eb;
+}
+
+.pendingRequest:hover, .previousStatus:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
 .iconText{
     display:flex;
     align-items: center;
@@ -32,9 +45,9 @@ a{
     justify-content: center;
     padding-top:8px;
 }
+
 .card img{
     width:60px;
-
 }
 
 .card .text{
@@ -52,9 +65,7 @@ a{
     font-size: 20px;
     color:#fff;
 }
-.demandStatus{
-    background: #8189eb;
-}
+
 .fa-file-circle-exclamation,.fa-arrow-up-right-from-square{
     color:#fff;
     font-size: 45px;
