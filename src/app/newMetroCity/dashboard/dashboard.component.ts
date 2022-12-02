@@ -103,7 +103,7 @@ export class DashboardComponent implements OnInit {
       data: {
         // labels: [date],
         datasets: [{
-          label: 'petrol',
+          label: 'petrol', 
           data: day,
           backgroundColor: [
             'rgba(233,136,136,1)',

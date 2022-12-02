@@ -9,14 +9,29 @@
       </div>
   </div>
     <div class="outerContainer">
-      <div class="d-flex justify-content-end newPurchaseBtndiv">
-        <button
-          class="addUserBtn"
-          data-bs-toggle="modal"
-          data-bs-target="#addUserModal"
-        >
-          Add Vehicle
-        </button>
+      <div class="d-flex justify-content-between">
+
+        <!-- Add Department Button -->
+        <div class="addDepartmentBtndiv">
+          <button
+            class="addDepartmentBtn"
+            data-bs-toggle="modal"
+            data-bs-target="#addDepartmentModal"
+          >
+            Add Department
+          </button>
+        </div>
+
+        <!-- Add Vehicle Button -->
+        <div class="addVehicleBtndiv">
+          <button
+            class="addVehicleBtn"
+            data-bs-toggle="modal"
+            data-bs-target="#addVehicleModal"
+          >
+            Add Vehicle
+          </button>
+        </div>
       </div>
       <div class="tableContainer">
         <table class="table table-striped text-center">
@@ -59,7 +74,7 @@
     <!-- Add Vehicle Modal -->
     <div
       class="modal fade"
-      id="addUserModal"
+      id="addVehicleModal"
       tabindex="-1"
       aria-labelledby="exampleModalLabel"
       aria-hidden="true"
@@ -156,6 +171,63 @@
         </div>
       </div>
     </div>
+
+    <!-- Add Department Modal -->
+    <div
+    class="modal fade"
+    id="addDepartmentModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5
+            class="modal-title fw-bold"
+            id="exampleModalLabel"
+            style="color: rgb(156, 28, 92)"
+          >
+            ADD DEPARTMENT
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <div class="addDepartmentContainer">
+            <!-- Department -->
+            <div class="my-4 d-flex justify-content-center">
+              <div class="modelHeadingDiv text-start mx-2">DEPARTMENT</div>
+              <div class="modalValueDiv text-center mx-2">
+                <input type="text" class="w-100 inputs" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer d-flex justify-content-center">
+          <button
+            type="button"
+            class="btn text-white w-25"
+            style="background-color: rgb(156, 28, 92)"
+          >
+            Add
+          </button>
+          <button
+            type="button"
+            class="btn text-white w-25"
+            data-bs-dismiss="modal"
+            style="background-color: rgb(156, 28, 92)"
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
   
   <!-- Edit User Modal -->
   <div

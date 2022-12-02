@@ -23,7 +23,7 @@ a{
     color: rgb(156,28,92);
 }
 
-.addUserBtn {
+.addVehicleBtn, .addDepartmentBtn {
     background-color: rgb(156,28,92);
     color: white;
     border: none;
