@@ -76,6 +76,7 @@
                   >
                     Edit
                   </button>
+                  <button data-bs-toggle="modal" data-bs-target="#refuelModal" ngbDropdownItem (click)="removeItem(vh)">Delete</button>
                 </div>
               </div>
             </td>
@@ -340,7 +341,6 @@
               class="btn text-white w-25"
               style="background-color: rgb(156, 28, 92)"
               id="addBtn"
-              data-bs-dismiss="modal"
              
             >
               <!-- (click)="PostVehicles(vehicleNumber)" -->
@@ -549,11 +549,11 @@
   </div>
 </div>
 
-<script>
+<!-- <script>
   $("#addBtn").submit(function (e) {
     e.preventDefault();
     // Coding
     $("#addVehicleModal").modal("toggle"); //or  $('#IDModal').modal('hide');
     return false;
   });
-</script>
+</script> -->

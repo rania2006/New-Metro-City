@@ -21,6 +21,8 @@ export class InventoryStoresComponent implements OnInit {
       stockCapacity: new FormControl("", Validators.required),
       storeAddress: new FormControl("", Validators.required),
     })
+
+    this.Stores();
   }
 
   storeModel = new Stores("","","","","");
@@ -44,7 +46,7 @@ export class InventoryStoresComponent implements OnInit {
        this.api.addStores(this.storeModel).subscribe({
         next:(res)=>{
           console.log("Success!",res)
-          this.Stores()
+          this.Stores();
         },
         error:(err)=>{
           console.log("Error!",err)
@@ -58,7 +60,7 @@ export class InventoryStoresComponent implements OnInit {
 Submit(){
   console.log(this.storeModel)
 }
-allStores
+allStores: any;
 Stores() {
   // department get
   this.api.getStores().subscribe({
@@ -66,5 +68,13 @@ Stores() {
       this.allStores = res;
     },
   });
+}
+
+
+removeItem(i:any){
+  let index = this.allStores.findIndex((item) => {
+    return item.id === i.id;
+  });
+  this.allStores.splice(index, 1);
 }
 }

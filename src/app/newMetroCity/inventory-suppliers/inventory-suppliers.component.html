@@ -55,7 +55,7 @@
                   </button>
                   <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
                     <button data-bs-toggle="modal" data-bs-target="#editSupplierModal"ngbDropdownItem >Edit</button>
-                    <button data-bs-toggle="modal" data-bs-target="#refuelModal" ngbDropdownItem>Delete</button>
+                    <button data-bs-toggle="modal" data-bs-target="#refuelModal" ngbDropdownItem (click)="removeItem(supplier)">Delete</button>
                   </div>
                 </div>
               </td>

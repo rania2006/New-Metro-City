@@ -106,5 +106,12 @@ export class VehicleComponent implements OnInit {
     });
     // vehicle post request
   }
+
+  removeItem(i:any){
+    let index = this.AllVehicles.findIndex((item) => {
+      return item.id === i.id;
+    });
+    this.AllVehicles.splice(index, 1);
+  }
 }
 

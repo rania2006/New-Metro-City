@@ -35,6 +35,7 @@ export class InventorySuppliersComponent implements OnInit {
       this.api.addSupplier(this.supplierModel).subscribe({
         next: (res) => {
           console.log('Success!', res);
+          this.Suppliers();
         },
         error: (err) => {
           console.log('Error!', err);
@@ -57,5 +58,11 @@ export class InventorySuppliersComponent implements OnInit {
   }
 
 
+  removeItem(i:any){
+    let index = this.AllSuppliers.findIndex((item) => {
+      return item.id === i.id;
+    });
+    this.AllSuppliers.splice(index, 1);
+  }
 
 }

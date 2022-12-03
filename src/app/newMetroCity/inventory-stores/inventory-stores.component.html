@@ -38,11 +38,11 @@
           </thead>
           <tbody>
             <tr *ngFor="let s of allStores">
-              <th>Store 1</th>
-              <td>Aslam</td>
-              <td>03245678239</td>
-              <td>5000L</td>
-              <td>London</td>
+              <th>{{s.storeName}}</th>
+              <td>{{s.inchargeName}}</td>
+              <td>{{s.contactNumber}}</td>
+              <td>{{s.stockCapacity}} L</td>
+              <td>{{s.storeAddress}}</td>
               <td>
                 <div>
                   <!-- <button class="editbtn mx-2" data-bs-toggle="modal"
@@ -54,7 +54,7 @@
                     </button>
                     <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
                       <button data-bs-toggle="modal" data-bs-target="#editStoreModal" ngbDropdownItem>Edit</button>
-                      <button data-bs-toggle="modal" data-bs-target="#refuelModal" ngbDropdownItem>Delete</button>
+                      <button data-bs-toggle="modal" data-bs-target="#refuelModal" ngbDropdownItem (click)="removeItem(s)">Delete</button>
                     </div>
                   </div>
                 </div>
