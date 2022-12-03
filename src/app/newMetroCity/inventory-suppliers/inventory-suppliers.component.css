@@ -13,7 +13,7 @@
 }
 
 .backpressbtn{
-    font-size: 26px;
+    font-size: 35px;
 }
 
 a{
@@ -39,10 +39,10 @@ a{
     border-radius: 5px;
 }
 
-.SupplierContainer{
+/* .SupplierContainer{
     overflow-x: hidden;
     overflow-y: scroll;
-}
+} */
 
 .TableheadingDiv{
     background-color: rgb(156,28,92);
@@ -98,3 +98,6 @@ a{
     background: transparent;
     width: 100%;
 }
+.dropdown-toggle::after {
+    display:none;
+  }

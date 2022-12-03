@@ -30,27 +30,33 @@
       <div class="SupplierContainer">
         <table class="table table-striped text-center">
           <thead>
-            <tr class="TableheadingDiv">
-              <th scope="col">NAME</th>
-              <th scope="col">INCHARGE</th>
-              <th scope="col">CONTACT NO</th>
-              <th scope="col">TOTAL QUANTITY</th>
-              <th scope="col">ADDRESS</th>
+            <tr class="TableheadingDiv"> 
+              <th scope="col">SUPPLIER NAME</th>
+              <th scope="col">SUPPLIER ADDRESS</th>
+              <th scope="col">SUPPLIER CONTACT#</th>
               <th scope="col">ACTION</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <th>Store 1</th>
-              <td>Aslam</td>
-              <td>03245678239</td>
-              <td>5000L</td>
-              <td>London</td>
+          <tbody class="" >
+            <tr *ngFor="let supplier from AllSuppliers">
+              
+              <td>{{supplier.suplierName}}</td>
+              <td>{{supplier.suplierAddress}}</td>
+              <td>{{supplier.suplierContact}}</td>
               <td>
-                <div>
+                <!-- <div>
                   <button class="editbtn mx-2" data-bs-toggle="modal"
                   data-bs-target="#editSupplierModal">Edit</button>
                   <button class="deletebtn mx-2">Delete</button>
+                </div> -->
+                <div ngbDropdown class="d-inline-block">
+                  <button type="button" class="btn" id="dropdownBasic1" ngbDropdownToggle>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                  </button>
+                  <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                    <button data-bs-toggle="modal" data-bs-target="#editSupplierModal"ngbDropdownItem >Edit</button>
+                    <button data-bs-toggle="modal" data-bs-target="#refuelModal" ngbDropdownItem>Delete</button>
+                  </div>
                 </div>
               </td>
             </tr>
@@ -85,50 +91,49 @@
          aria-label="Close"
        ></button>
      </div>
+     <form #SupplierAdd="ngForm" (ngSubmit)="onSubmitSupplier()" [formGroup]="addSupplier">
      <div class="modal-body">
-       <div class="addUserContainer">
-         <!-- name -->
+       <div class="addSupplierContainer">
+         <!-- Supplier Name -->
          <div class="my-4 d-flex justify-content-center">
-           <div class="modelHeadingDiv text-start mx-2">Name</div>
-           <div class="modalValueDiv text-center mx-2">
-             <input type="text" class="w-100 inputs" />
+           <div class="modelHeadingDiv text-start mx-2">Supplier Name</div>
+          <div class="withvalidation">
+            <div class="modalValueDiv text-center mx-2">
+              <input type="text" class="w-100 inputs" 
+              [(ngModel)]="supplierModel.suplierName" formControlName="suplierName"
+              [class.error]="addSupplier.controls['suplierName'].dirty && addSupplier.hasError('required','suplierName')" />
+            </div>
+            <small
+                    *ngIf="addSupplier.controls['suplierName'].dirty && addSupplier.hasError('required','suplierName')"
+                    class="text-danger">Supplier Name is Required</small>
+          </div>
+         </div>
+         <!-- Supplier Address -->
+         <div class="my-4 d-flex justify-content-center">
+           <div class="modelHeadingDiv text-start mx-2">Supplier Address</div>
+           <div class="withvalidation">
+             <div class="modalValueDiv text-center mx-2">
+               <input type="text" class="w-100 inputs" 
+               [(ngModel)]="supplierModel.suplierAddress" formControlName="suplierAddress"
+              [class.error]="addSupplier.controls['suplierAddress'].dirty && addSupplier.hasError('required','suplierAddress')" />
+             </div>
+             <small
+                    *ngIf="addSupplier.controls['suplierAddress'].dirty && addSupplier.hasError('required','suplierAddress')"
+                    class="text-danger">Supplier Address is Required</small>
            </div>
          </div>
-         <!-- Fuel Type -->
+         <!-- Supplier Contact -->
          <div class="my-4 d-flex justify-content-center">
-           <div class="modelHeadingDiv text-start mx-2">Fuel Type</div>
+           <div class="modelHeadingDiv text-start mx-2">Supplier Contact</div>
+           <div class="withvalidation">
            <div class="modalValueDiv text-center mx-2">
-             <input type="text" class="w-100 inputs" />
+             <input type="number" class="w-100 inputs" 
+             [(ngModel)]="supplierModel.suplierContact" formControlName="suplierContact"
+              [class.error]="addSupplier.controls['suplierContact'].dirty && addSupplier.hasError('required','suplierContact')" />
            </div>
-         </div>
-         <!-- Total Quantity -->
-         <div class="my-4 d-flex justify-content-center">
-           <div class="modelHeadingDiv text-start mx-2">Total Quantity</div>
-           <div class="modalValueDiv text-center mx-2">
-             <input type="number" class="w-100 inputs" />
-           </div>
-         </div>
-         <!-- Contact No -->
-         <div class="my-4 d-flex justify-content-center">
-           <div class="modelHeadingDiv text-start mx-2">Contact No</div>
-           <div class="modalValueDiv text-center mx-2">
-             <input type="number" class="w-100 inputs" />
-           </div>
-         </div>
-
-         <!-- CNIC -->
-         <div class="my-4 d-flex justify-content-center">
-           <div class="modelHeadingDiv text-start mx-2">CNIC</div>
-           <div class="modalValueDiv text-center mx-2">
-             <input type="number" class="w-100 inputs" />
-           </div>
-         </div>
-
-         <!-- status -->
-         <div class="my-4 d-flex justify-content-center">
-           <div class="modelHeadingDiv text-start mx-2">Status</div>
-           <div class="modalValueDiv text-center mx-2">
-             <input type="text" class="w-100 inputs" />
+           <small
+                    *ngIf="addSupplier.controls['suplierContact'].dirty && addSupplier.hasError('required','suplierContact')"
+                    class="text-danger">Supplier Contact is Required</small>
            </div>
          </div>
 
@@ -136,7 +141,7 @@
      </div>
      <div class="modal-footer d-flex justify-content-center">
        <button
-         type="button"
+         type="submit"
          class="btn text-white w-25"
          style="background-color: rgb(156, 28, 92)"
        >
@@ -151,6 +156,7 @@
          Cancel
        </button>
      </div>
+     </form>
    </div>
  </div>
 </div>

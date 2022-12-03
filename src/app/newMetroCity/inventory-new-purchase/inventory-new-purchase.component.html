@@ -20,20 +20,9 @@
             <!-- Fuel Type -->
             <div class="my-2">
               <label for="dropdown">Fuel Type</label>
-              <div
-                ngbDropdown
-                class="nav-item dropdown dropdownBorder"
-                style="height: 45px"
-              >
-                <a
-                  class="nav-link dropdown-toggle d-flex justify-content-end w-100 align-items-center p-2"
-                  href="#"
-                  style="height: 48px"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="true"
-                  ngbDropdownToggle
-                >
+              <div ngbDropdown class="nav-item dropdown dropdownBorder" style="height: 45px">
+                <a class="nav-link dropdown-toggle d-flex justify-content-end w-100 align-items-center p-2" href="#"
+                  style="height: 48px" role="button" data-bs-toggle="dropdown" aria-expanded="true" ngbDropdownToggle>
                 </a>
                 <ul class="dropdown-menu w-100" ngbDropdownMenu>
                   <li>
@@ -65,20 +54,9 @@
             <!-- Storage -->
             <div class="my-2">
               <label for="dropdown">Storage</label>
-              <div
-                ngbDropdown
-                class="nav-item dropdown dropdownBorder"
-                style="height: 45px"
-              >
-                <a
-                  class="nav-link dropdown-toggle d-flex justify-content-end w-100 align-items-center p-2"
-                  href="#"
-                  style="height: 48px"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="true"
-                  ngbDropdownToggle
-                >
+              <div ngbDropdown class="nav-item dropdown dropdownBorder" style="height: 45px">
+                <a class="nav-link dropdown-toggle d-flex justify-content-end w-100 align-items-center p-2" href="#"
+                  style="height: 48px" role="button" data-bs-toggle="dropdown" aria-expanded="true" ngbDropdownToggle>
                 </a>
                 <ul class="dropdown-menu w-100" ngbDropdownMenu>
                   <li>
@@ -133,8 +111,13 @@
                   <td>50,000 PKR</td>
                   <td>Store 1</td>
                   <td>
-                    <div>
-                      <button class="editbtn">Edit</button>
+                    <div ngbDropdown class="d-inline-block">
+                      <button type="button" class="btn" id="dropdownBasic1" ngbDropdownToggle>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                      </button>
+                      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                        <button data-bs-toggle="modal" data-bs-target="#refuelModal" ngbDropdownItem>Edit</button>
+                      </div>
                     </div>
                   </td>
                 </tr>
@@ -154,9 +137,7 @@
 
           <div class="purchaseDetailsContainer">
             <div class="row">
-              <div
-                class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12"
-              >
+              <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
                 <!-- Invoice # -->
                 <div class="my-2">
                   <label for="invoiceNo">Invoice #</label>
@@ -165,9 +146,7 @@
                   </div>
                 </div>
               </div>
-              <div
-                class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12"
-              >
+              <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
                 <!-- Supplier -->
                 <div class="my-2">
                   <label for="supplier">Supplier</label>
@@ -176,26 +155,14 @@
                   </div>
                 </div>
               </div>
-              <div
-                class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12"
-              >
+              <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
                 <!-- payment -->
                 <div class="my-2">
                   <label for="supplier">Payment</label>
-                  <div
-                    ngbDropdown
-                    class="nav-item dropdown dropdownBorder"
-                    style="height: 45px"
-                  >
-                    <a
-                      class="nav-link dropdown-toggle d-flex justify-content-end w-100 align-items-center p-2"
-                      href="#"
-                      style="height: 48px"
-                      role="button"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="true"
-                      ngbDropdownToggle
-                    >
+                  <div ngbDropdown class="nav-item dropdown dropdownBorder" style="height: 45px">
+                    <a class="nav-link dropdown-toggle d-flex justify-content-end w-100 align-items-center p-2" href="#"
+                      style="height: 48px" role="button" data-bs-toggle="dropdown" aria-expanded="true"
+                      ngbDropdownToggle>
                     </a>
                     <ul class="dropdown-menu w-100" ngbDropdownMenu>
                       <li>
@@ -208,9 +175,7 @@
                   </div>
                 </div>
               </div>
-              <div
-                class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12"
-              >
+              <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
                 <!-- Paid -->
                 <div class="my-2">
                   <label for="paid">Paid</label>

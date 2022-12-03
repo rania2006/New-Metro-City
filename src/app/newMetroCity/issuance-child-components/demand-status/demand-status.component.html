@@ -34,15 +34,14 @@
               <td>50L</td>
               <td>Approved</td>
               <td>
-                <a>
-                  <button
-                    class="refuel text-white"
-                    data-bs-toggle="modal"
-                    data-bs-target="#refuelModal"
-                  >
-                    Refuel
+                <div ngbDropdown class="d-inline-block">
+                  <button type="button" class="btn" id="dropdownBasic1" ngbDropdownToggle>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
                   </button>
-                </a>
+                  <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                    <button data-bs-toggle="modal" data-bs-target="#refuelModal" ngbDropdownItem>Refuel</button>
+                  </div>
+                </div>
               </td>
             </tr>
             <tr class="change">
@@ -54,15 +53,14 @@
               <td>60L</td>
               <td>Approved With Changes</td>
               <td>
-                <a>
-                  <button
-                    class="refuel text-white"
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal"
-                  >
-                    Refuel
+                <div ngbDropdown class="d-inline-block">
+                  <button type="button" class="btn" id="dropdownBasic1" ngbDropdownToggle>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
                   </button>
-                </a>
+                  <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                    <button data-bs-toggle="modal" data-bs-target="#refuelModal" ngbDropdownItem>Refuel</button>
+                  </div>
+                </div>
               </td>
             </tr>
             <tr class="denied">
@@ -74,15 +72,14 @@
               <td>0L</td>
               <td>Denied</td>
               <td>
-                <a>
-                  <button
-                    class="refuel text-white"
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal"
-                  >
-                    Refuel
+                <div ngbDropdown class="d-inline-block">
+                  <button type="button" class="btn" id="dropdownBasic1" ngbDropdownToggle>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
                   </button>
-                </a>
+                  <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                    <button data-bs-toggle="modal" data-bs-target="#refuelModal" ngbDropdownItem>Refuel</button>
+                  </div>
+                </div>
               </td>
             </tr>
             <tr class="accept">
@@ -94,15 +91,14 @@
               <td>50L</td>
               <td>Approved</td>
               <td>
-                <a>
-                  <button
-                    class="refuel text-white"
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal"
-                  >
-                    Refuel
+                <div ngbDropdown class="d-inline-block">
+                  <button type="button" class="btn" id="dropdownBasic1" ngbDropdownToggle>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
                   </button>
-                </a>
+                  <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                    <button data-bs-toggle="modal" data-bs-target="#refuelModal" ngbDropdownItem>Refuel</button>
+                  </div>
+                </div>
               </td>
             </tr>
             <tr class="change">
@@ -114,15 +110,14 @@
               <td>60L</td>
               <td>Approved With Changes</td>
               <td>
-                <a>
-                  <button
-                    class="refuel text-white"
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal"
-                  >
-                    Refuel
+                <div ngbDropdown class="d-inline-block">
+                  <button type="button" class="btn" id="dropdownBasic1" ngbDropdownToggle>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
                   </button>
-                </a>
+                  <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                    <button data-bs-toggle="modal" data-bs-target="#refuelModal" ngbDropdownItem>Refuel</button>
+                  </div>
+                </div>
               </td>
             </tr>
             <tr class="denied">
@@ -134,15 +129,14 @@
               <td>0L</td>
               <td>Denied</td>
               <td>
-                <a>
-                  <button
-                    class="refuel text-white"
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal"
-                  >
-                    Refuel
+                <div ngbDropdown class="d-inline-block">
+                  <button type="button" class="btn" id="dropdownBasic1" ngbDropdownToggle>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
                   </button>
-                </a>
+                  <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                    <button data-bs-toggle="modal" data-bs-target="#refuelModal" ngbDropdownItem>Refuel</button>
+                  </div>
+                </div>
               </td>
             </tr>
           </tbody>
@@ -153,29 +147,14 @@
 
 
   <!-- Modal -->
-  <div
-    class="modal fade"
-    id="refuelModal"
-    tabindex="-1"
-    aria-labelledby="exampleModalLabel"
-    aria-hidden="true"
-  >
+  <div class="modal fade" id="refuelModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h5
-            class="modal-title fw-bold"
-            id="exampleModalLabel"
-            style="color: rgb(156, 28, 92)"
-          >
+          <h5 class="modal-title fw-bold" id="exampleModalLabel" style="color: rgb(156, 28, 92)">
             REFUEL
           </h5>
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="modal"
-            aria-label="Close"
-          ></button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <div class="VehicleDetailsBox">
@@ -199,27 +178,15 @@
             <div class="my-4 d-flex">
               <div class="headingDiv w-50 text-center">Demand</div>
 
-              <input
-                type="text"
-                class="w-50 text-center valueDiv demandDiv"
-                value="{{ demandValue }}"
-              />
+              <input type="text" class="w-50 text-center valueDiv demandDiv" value="{{ demandValue }}" />
             </div>
           </div>
           <div class="modal-footer d-flex justify-content-center">
-            <button
-              type="button"
-              class="btn text-white w-25"
-              style="background-color: rgb(156, 28, 92)"
-            >
+            <button type="button" class="btn text-white w-25" style="background-color: rgb(156, 28, 92)">
               Yes
             </button>
-            <button
-              type="button"
-              class="btn text-white w-25"
-              data-bs-dismiss="modal"
-              style="background-color: rgb(156, 28, 92)"
-            >
+            <button type="button" class="btn text-white w-25" data-bs-dismiss="modal"
+              style="background-color: rgb(156, 28, 92)">
               No
             </button>
           </div>
@@ -228,5 +195,3 @@
     </div>
   </div>
 </div>
-
-

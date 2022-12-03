@@ -19,7 +19,7 @@
 }
 
 .backpressbtn{
-    font-size: 26px;
+    font-size: 35px;
     color: rgb(156,28,92);
 }
 
@@ -90,10 +90,10 @@ a{
     background-color: rgb(4, 202, 103);
 }
 
-.addedPurchaseContainer{
+/* .addedPurchaseContainer{
     overflow-x: hidden;
     overflow-y: scroll;
-}
+} */
 
 .TableheadingDiv{
     background-color: rgb(156,28,92);
@@ -113,3 +113,6 @@ a{
 .editbtn:hover {
     background-color: rgb(4, 202, 103);
 }
+.dropdown-toggle::after {
+    display:none;
+  }

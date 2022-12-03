@@ -24,7 +24,7 @@
 }
 
 .backpressbtn{
-    font-size: 26px;
+    font-size: 35px;
     color: rgb(156,28,92);
 }
 
@@ -183,7 +183,7 @@ label {
 }
 .driverNameDiv,.vehicleNoDiv{
 
-    margin-left:5%;
+    margin-left:8%;
     width:86%;
 }
 .backButton{
@@ -211,5 +211,9 @@ label {
     justify-content: center;
     margin:4px;
 }
-
+.requesteddContainer{
+    background: white;
+    margin-top:50px;
+    box-shadow: rgb(149 157 165 / 20%) 0px 2px 18px;
+}
 
