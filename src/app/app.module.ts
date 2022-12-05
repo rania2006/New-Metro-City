@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
@@ -17,9 +18,8 @@ import { FuelSystemComponent } from './newMetroCity/common-layout/fuel-system/fu
 import { DashboardComponent } from './newMetroCity/dashboard/dashboard.component';
 
 import { IssuanceComponent } from './newMetroCity/issuance/issuance.component';
-import { DemandStatusComponent } from './newMetroCity/issuance-child-components/demand-status/demand-status.component';
 import { SendDemandComponent } from './newMetroCity/issuance-child-components/send-demand/send-demand.component';
-
+import { DemandStatusComponent } from './newMetroCity/issuance-child-components/demand-status/demand-status.component';
 import { ApprovalComponent } from './newMetroCity/approval/approval.component';
 import { PendingRequestsComponent } from './newMetroCity/approval-child-components/pending-requests/pending-requests.component';
 import { PreviousRequestsComponent } from './newMetroCity/approval-child-components/previous-requests/previous-requests.component';
@@ -46,6 +46,10 @@ import { SettingsInvoicePrintingComponent } from './newMetroCity/settings-invoic
 import { NgxPrintElementModule } from 'ngx-print-element';
 
 import { NgChartsModule } from 'ng2-charts';
+import {MatInputModule} from '@angular/material/input'
+import {MatAutocompleteModule} from '@angular/material/autocomplete'
+
+
 
 
 
@@ -83,6 +87,7 @@ import { NgChartsModule } from 'ng2-charts';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
@@ -90,7 +95,10 @@ import { NgChartsModule } from 'ng2-charts';
     HttpClientModule,
     NgbModule,
     NgxPrintElementModule,
-    NgChartsModule
+    NgChartsModule,
+    MatInputModule,
+    MatAutocompleteModule
+
    
   ],
   providers: [],

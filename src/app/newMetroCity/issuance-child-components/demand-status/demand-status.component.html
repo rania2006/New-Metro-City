@@ -11,6 +11,7 @@
     <div class="innerContainer">
       <!-- Table container for Approval Requests -->
       <div class="tableContainer">
+        <h1 class="text-center"><b>Admin Sending Status</b></h1>
         <table class="table table-striped text-center">
           <thead>
             <tr class="tableHeadings">
@@ -82,68 +83,51 @@
                 </div>
               </td>
             </tr>
-            <tr class="accept">
-              <th scope="row">1</th>
-              <td>ABC-100P</td>
-              <td>Hassan</td>
-              <td>Electrical</td>
-              <td>50L</td>
-              <td>50L</td>
-              <td>Approved</td>
-              <td>
-                <div ngbDropdown class="d-inline-block">
-                  <button type="button" class="btn" id="dropdownBasic1" ngbDropdownToggle>
-                    <i class="fa-solid fa-ellipsis-vertical"></i>
-                  </button>
-                  <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                    <button data-bs-toggle="modal" data-bs-target="#refuelModal" ngbDropdownItem>Refuel</button>
-                  </div>
-                </div>
-              </td>
-            </tr>
-            <tr class="change">
-              <th scope="row">1</th>
-              <td>ABC-100P</td>
-              <td>Ali</td>
-              <td>Electrical</td>
-              <td>100L</td>
-              <td>60L</td>
-              <td>Approved With Changes</td>
-              <td>
-                <div ngbDropdown class="d-inline-block">
-                  <button type="button" class="btn" id="dropdownBasic1" ngbDropdownToggle>
-                    <i class="fa-solid fa-ellipsis-vertical"></i>
-                  </button>
-                  <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                    <button data-bs-toggle="modal" data-bs-target="#refuelModal" ngbDropdownItem>Refuel</button>
-                  </div>
-                </div>
-              </td>
-            </tr>
-            <tr class="denied">
-              <th scope="row">1</th>
-              <td>ABC-100P</td>
-              <td>Arshad Aslam</td>
-              <td>Electrical</td>
-              <td>80L</td>
-              <td>0L</td>
-              <td>Denied</td>
-              <td>
-                <div ngbDropdown class="d-inline-block">
-                  <button type="button" class="btn" id="dropdownBasic1" ngbDropdownToggle>
-                    <i class="fa-solid fa-ellipsis-vertical"></i>
-                  </button>
-                  <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                    <button data-bs-toggle="modal" data-bs-target="#refuelModal" ngbDropdownItem>Refuel</button>
-                  </div>
-                </div>
-              </td>
-            </tr>
+           
           </tbody>
         </table>
       </div>
+       <!-- PENDING REQUESTS -->
+  <div class="tableContainer">
+    <h1 class="text-center" ><b>Pending Requests</b></h1>
+    <table class="table text-center">
+      <thead>
+        <tr class="tableHeadings bg-danger ">
+          <th scope="col">SR.</th>
+          <th scope="col">VEHICLE NUMBER</th>
+          <th scope="col">DRIVER NAME</th>
+          <th scope="col">DEPARTMENT NAME</th>
+          <th scope="col">DEMAND</th>
+          <th scope="col">ACTION</th>
+        </tr>
+      </thead>
+      <tbody class="">
+        <tr class="pending">
+          <th scope="row">1</th>
+          <td>ABC-100P</td>
+          <td>Hassan</td>
+          <td>Electrical</td>
+          <td>50L</td>
+          <td>
+            <div ngbDropdown class="d-inline-block">
+              <button type="button" class="btn" id="dropdownBasic1" ngbDropdownToggle>
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+              </button>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                <button  ngbDropdownItem>Delete</button>
+              </div>
+            </div>
+          </td>
+        </tr>
+       
+       
+      </tbody>
+    </table>
+  </div>
     </div>
   </div>
+
+ 
 
 
   <!-- Modal -->

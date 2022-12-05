@@ -10,6 +10,12 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./inventory-stores.component.css']
 })
 export class InventoryStoresComponent implements OnInit {
+
+  activeIndex = -1;
+
+
+  storeModel = new Stores();
+  allStores: any;
   addStorefg!:FormGroup
   constructor(private api:ApiService) { }
 
@@ -25,44 +31,39 @@ export class InventoryStoresComponent implements OnInit {
     this.Stores();
   }
 
-  storeModel = new Stores("","","","","");
+  
   onSubmit(){
-    // if(this.addStorefg.valid){
       console.log(this.storeModel)
-
-      // this.api.addStores(this.storeModel).subscribe({
-      //   next:(res)=>{
-      //     console.log("Success!",res)
-      //   },
-      //   error:(err)=>{
-      //     console.log("Error!",err)
-      //   }
-      // })
-
-    // }else{
-    //   validateForm.validateAllFormFields(this.addStorefg);
-    // }
-    if(this.addStorefg.valid){
-       this.api.addStores(this.storeModel).subscribe({
-        next:(res)=>{
-          console.log("Success!",res)
-          this.Stores();
-        },
-        error:(err)=>{
-          console.log("Error!",err)
-        }
+    if(this.activeIndex == -1){
+      if(this.addStorefg.valid){
+         this.api.addStores(this.storeModel).subscribe({
+          next:(res)=>{
+            console.log("Success!",res)
+            alert("Successfully Added!");
+            this.Stores();
+          },
+          error:(err)=>{
+            console.log("Error!",err)
+          }
+        })
+      }
+      else{
+        validateForm.validateAllFormFields(this.addStorefg);
+      }
+    }
+    else {
+      this.api.updateStores(this.storeModel).subscribe(data =>{
+        this.Stores();
       })
     }
-    else{
-      validateForm.validateAllFormFields(this.addStorefg);
-    }
+
+    this.storeModel = new Stores();
+    this.activeIndex = -1;
 }
-Submit(){
-  console.log(this.storeModel)
-}
-allStores: any;
+
+
 Stores() {
-  // department get
+ 
   this.api.getStores().subscribe({
     next: (res) => {
       this.allStores = res;
@@ -70,11 +71,24 @@ Stores() {
   });
 }
 
+editItem(obj, index){
+  console.log(obj, "obj");
+    console.log(index, "index")
+    this.storeModel.id = obj.id;
+    this.storeModel.storeName = obj.storeName;
+    this.storeModel.inchargeName = obj.inchargeName;
+    this.storeModel.contactNumber = obj.contactNumber;
+    this.storeModel.stockCapacity = obj.stockCapacity;
+    this.storeModel.storeAddress = obj.storeAddress;
+    
+    this.activeIndex = index;
+}
+
 
 removeItem(i:any){
-  let index = this.allStores.findIndex((item) => {
-    return item.id === i.id;
-  });
-  this.allStores.splice(index, 1);
+  console.log(i);
+    this.api.deleteStores(i).subscribe((data) => {
+      this.Stores();
+    });
 }
 }

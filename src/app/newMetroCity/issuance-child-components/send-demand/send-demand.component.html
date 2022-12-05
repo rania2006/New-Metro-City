@@ -32,12 +32,20 @@
                       /> -->
                     </div>
                     <div class="vehicleNoDiv text-center">
-                      <input
-                        type="text"
-                        placeholder=""
-                        id="vehicleNo"
-                        class="input"
-                      />
+                      <form [formGroup]="formGroup">           
+                      <mat-form-field >
+                        <input matInput type="text" [matAutocomplete]="auto" formControlName="vehicleNumber" (keyup)="handleKeyUpforMenuCode($event)"/>
+                          <mat-autocomplete #auto="matAutocomplete">
+                              <mat-option  *ngFor="let vNumb of filteredOptions" [value]="vNumb" #matDropdown
+                              (onSelectionChange)="handlekeyuponDropdown(matDropdown.value)"
+                              >
+                                 {{vNumb}}
+                              </mat-option>
+        
+                          </mat-autocomplete>
+        
+                      </mat-form-field>
+                    </form>
                     </div>
                   </div>
                 </div>
@@ -91,24 +99,31 @@
                 <div class="InputFields">
                   <label for="demand" class="dd">Demand</label>
                   <div class="demandDiv text-center">
+                    <mat-form-field class="demand">
                     <input
-                      type="text"
-                      placeholder=""
-                      id="demand"
-                      class="w-75"
+                      type="Number"
+                      matInput
+                      id="2"
                       class="input"
+                      style="height: 20px; text-transform: uppercase;"
+                      
+                      #demand
                     />
+                  </mat-form-field>
                   </div>
                 </div>
-  
+                <!-- {{demand.value}} -->
+                
+               
                 <!-- Request and Cancel Button -->
                 <div class="buttonDiv row text-center">
                   <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
                     <button
                       class="ReqApprovalbtn"
-                      data-bs-toggle="modal"
-                      data-bs-target="#exampleModal"
+                      (click)="sndRequest(demand.value)"
                     >
+                    <!-- data-bs-toggle="modal"
+                    data-bs-target="#exampleModal" -->
                       Request Approval
                     </button>
                   </div>
@@ -117,30 +132,36 @@
                   </div>
                 </div>
               </div>
+
             </div>
+          
+            
           </div>
         
   
           <!-- details of the vehicle -->
           <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12">
-            <div class="details">
+            <div class="details" >
               <div class="borderDiv">
                 <div class="childDiv">Details</div>
   
-                <div class="VehicleDetailsBox">
-                  <div class="VehicleDetails">Vehicle Number:</div>
+                <div class="VehicleDetailsBox" *ngFor="let det of selectedVehicleDetail">
+                  
+                  <div class="VehicleDetails">Vehicle Number:<b class="ps-3">{{det.vehicleNumber}}</b></div>
                   <hr class="hrline" />
-                  <div class="VehicleDetails">Department:</div>
+                  <div class="VehicleDetails">Department:<b class="ps-3">{{det.departmentId}}</b></div>
                   <hr class="hrline" />
-                  <div class="VehicleDetails">Driver:</div>
+                  <div class="VehicleDetails">Driver:<b class="ps-3">{{det.driverId}}</b></div>
                   <hr class="hrline" />
-                  <div class="VehicleDetails">Fuel Type:</div>
+                  <div class="VehicleDetails">Fuel Type:<b class="ps-3"></b></div>
                   <hr class="hrline" />
-                  <div class="VehicleDetails">Monthly Allowed Fuel:</div>
+                  <div class="VehicleDetails">Monthly Allowed Fuel:<b class="ps-3">{{det.allowedFuel}}</b></div>
                   <hr class="hrline" />
-                  <div class="VehicleDetails">Current Month Consumption:</div>
+                  <div class="VehicleDetails">Demand Fuel:<b class="ps-3">{{demandfuel}}</b></div>
                   <hr class="hrline" />
-                  <div class="VehicleDetails">Remaining:</div>
+                  <div class="VehicleDetails">Current Month Consumption:<b class="ps-3"></b></div>
+                  <hr class="hrline" />
+                  <div class="VehicleDetails">Remaining:<b class="ps-3">{{remaining}}</b></div>
                 </div>
               </div>
             </div>

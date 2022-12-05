@@ -11,6 +11,9 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class InventorySuppliersComponent implements OnInit {
 
+  activeIndex = -1;
+
+  supplierModel = new Supplier();
   AllSuppliers: any;
 
   addSupplier! : FormGroup;
@@ -27,42 +30,69 @@ export class InventorySuppliersComponent implements OnInit {
   }
 
   ////////////////////////////// Adding Supplier to DB //////////////////////////////////////
-  supplierModel = new Supplier("","", 0);
+ 
   onSubmitSupplier() {
-    if (this.addSupplier.valid) {
-      console.log(this.supplierModel);
-
-      this.api.addSupplier(this.supplierModel).subscribe({
-        next: (res) => {
-          console.log('Success!', res);
-          this.Suppliers();
-        },
-        error: (err) => {
-          console.log('Error!', err);
-        },
-      });
-    } else {
-      validateForm.validateAllFormFields(this.addSupplier);
-    } 
+    
+    if(this.activeIndex == -1){
+      if (this.addSupplier.valid) {
+        console.log(this.supplierModel);
+  
+        this.api.addSupplier(this.supplierModel).subscribe({
+          next: (res) => {
+            console.log('Success!', res);
+            alert("Successfully Added!");
+            this.Suppliers();
+          },
+          error: (err) => {
+            console.log('Error!', err);
+          },
+        });
+      } else {
+        validateForm.validateAllFormFields(this.addSupplier);
+      } 
+    }
+    else {
+      this.api.updateSupplier(this.supplierModel).subscribe(data => {
+        this.Suppliers();
+      })
+    }
+    this.supplierModel = new Supplier();
+    this.activeIndex = -1;
   }
 
 
 ////////////////////////////// Getting Supplier from DB //////////////////////////////////////
   Suppliers() {
     // department get
-    this.api.getDepartment().subscribe({
+    this.api.getSupplier().subscribe({
       next: (res) => {
+        
         this.AllSuppliers = res;
       },
     });
   }
 
+  editItem(obj, index){
+    console.log(obj, "obj");
+    console.log(index, "index")
+    this.supplierModel.id = obj.id;
+    this.supplierModel.suplierName = obj.suplierName;
+    this.supplierModel.suplierAddress = obj.suplierAddress;
+    this.supplierModel.suplierContact = obj.suplierContact;
+  
+
+
+    this.activeIndex = index;
+  }
 
   removeItem(i:any){
-    let index = this.AllSuppliers.findIndex((item) => {
-      return item.id === i.id;
-    });
-    this.AllSuppliers.splice(index, 1);
+    console.log(i, "lets see");
+    this.api.deleteSupplier(i).subscribe((data) =>{
+      
+          this.Suppliers();
+      
+    })
+    
   }
 
 }

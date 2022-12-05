@@ -52,7 +52,7 @@ a{
 
 .tableHeadings{
     
-    background-color: rgb(156,28,92);
+    background-color: rgb(217 155 184);
     font-weight: 600;
     color:#fff;
 }
@@ -189,4 +189,12 @@ a{
   }
   .dropdown-toggle::after {
   display:none;
+}
+.pending{
+    /* background: rgb(201, 188, 188); */
+    /* color:#fff; */
+    background: rgb(199, 199, 199);
+}
+h1{
+    text-transform: uppercase;
 }
